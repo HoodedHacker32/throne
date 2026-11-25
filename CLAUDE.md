@@ -5,6 +5,7 @@ Unofficial D&D (5e) campaign manager. Notes-first (markdown, `[[wikilinks]]`, ba
 Read first: `PRODUCT.md` (product + brand truth), `PLAN.md` (milestones M0-M7, status table in 3a), `DESIGN.md` (design system as built), `.impeccable/surfaces/app.md` (design direction contract), `docs/ddb-analysis.md` (D&D Beyond PDF field map).
 
 ## Working agreement
+- This repository is **public** (live at https://hoodedhacker32.github.io/throne/, deployed by `pages.yml` on every push to `main`). It started from one clean commit; the earlier history is in the owner's private `throne-private` archive. Never push branches or commits from that archive here, and never commit personal data (names, local paths, real character exports, keys).
 - The owner wants autonomous execution: do the work end to end, don't stop to ask unless a decision is truly theirs (money, accounts, publishing, deleting). They review from an iPhone, so keep commits small and push often; summarise in plain language.
 - Work on a branch and open PRs, or commit to `main` if told to. Commit messages: short, imperative.
 - Never commit personal files (D&D Beyond PDFs, `.env`, keys). Never use D&D Beyond/WotC logos, art or fonts. Bundled rules content = SRD only; mechanics numbers only, no book text.
