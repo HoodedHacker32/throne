@@ -1,0 +1,89 @@
+{
+  "title": "Choose the Throne app's look (round 2)",
+  "question": "New hand. Each card now shows four app screens (Player home, Character, Notes, DM combat), each with its own tab bar, so you judge an app and not one crammed page. Your party-roster home screen is kept in all of them.",
+  "options": [
+    {
+      "id": "gamebook", "kind": "assigned", "label": "Numbered Sections", "kicker": "THE ROLL",
+      "lineage": "1980s solo adventure gamebooks, where every paragraph has a number",
+      "thesis": "Every note, character and encounter has a section number, and links read as \"turn to 31\".",
+      "palette": ["#14100e", "#efe6d2", "#ba0000", "#7a1c16", "#3a3027"],
+      "materials": ["double-rule frames", "section numerals", "woodcut ink"],
+      "viewport": "Party roster home, character sheet, notes list and DM combat, each a separate screen with a bottom tab bar; every card carries a large red section number.",
+      "risk": "Numbers can read as decoration if they are not the real way to jump between notes.",
+      "raised": [
+        {"from": "challenger-gateboard", "raise": "State discipline: one red is reserved for what changed or whose turn it is."},
+        {"from": "challenger-ikeda", "raise": "Total tonal commitment: only ink, bone and red, no stray greys."}
+      ],
+      "html": ".impeccable/mocks/decision/gamebook.html"
+    },
+    {
+      "id": "model-pick", "kind": "pick", "label": "The DM Screen", "kicker": "IMPECCABLE'S PICK",
+      "lineage": "folded cardboard DM screens with quick-reference panels",
+      "thesis": "Hinged panels you swipe between, with a tab strip of quick references like conditions and cover.",
+      "palette": ["#14100e", "#2a2219", "#ba0000", "#efe6d2", "#d9a441"],
+      "materials": ["hinge creases", "quick-ref panels", "tab labels"],
+      "viewport": "Four screens built from hinged panels with a red quick-reference strip on top and a bottom tab bar.",
+      "risk": "Familiar to every DM, and creases can look like decoration on a phone.",
+      "html": ".impeccable/mocks/decision/dm-screen.html"
+    },
+    {
+      "id": "challenger-gateboard", "kind": "challenger", "catalogId": "vernacular-ephemera-boarding-pass-and-gate-board",
+      "label": "Initiative Board", "verdict": "competitive",
+      "lineage": "boarding passes and airport gate boards",
+      "thesis": "Turn order as a live board: rows rerank in place and a changed row stays lit until noticed.",
+      "palette": ["#0d0d0d", "#e8e8e8", "#ba0000", "#2a2a2a", "#8a8a8a"],
+      "materials": ["tabular rows", "mono figures", "one alert colour"],
+      "viewport": "Four screens in a high-contrast tabular grammar; combat is a board that reranks as initiative changes.",
+      "case": "Wins clarity for combat order and state; weak on identification for notes.",
+      "risk": "Cold for the player side.",
+      "html": ".impeccable/mocks/decision/gateboard.html"
+    },
+    {
+      "id": "challenger-crouwel", "kind": "challenger", "catalogId": "crouwel-grid-specimen",
+      "label": "Construction Grid", "verdict": "competitive",
+      "lineage": "Wim Crouwel gridded specimens",
+      "thesis": "A visible grid under everything, like dungeon graph paper, with block numerals for the numbers that matter.",
+      "palette": ["#efe6d2", "#14100e", "#ba0000", "#c9bea6"],
+      "materials": ["visible grid", "block numerals", "one red plane"],
+      "viewport": "Four screens on a visible cell grid with large block numerals for HP and ability scores.",
+      "case": "Holds identification through graph-paper kinship; clarity needs restraint on dense notes.",
+      "risk": "Grid-built numerals fight readable long notes.",
+      "html": ".impeccable/mocks/decision/crouwel.html"
+    },
+    {
+      "id": "challenger-annual", "kind": "challenger", "catalogId": "design-annual-s-plate-section",
+      "label": "Plate Section", "verdict": "competitive",
+      "lineage": "design annual plate sections",
+      "thesis": "Quiet printed sheets with hairlines, registration marks and one red stamp.",
+      "palette": ["#f5f4f6", "#16181A", "#ba0000", "#c9c7c4"],
+      "materials": ["hairlines", "registration crosses", "one stamp"],
+      "viewport": "Four screens as printed plates: mono labels, hairline rows, a red stamp for the current campaign.",
+      "case": "Wins clarity and calm for reading notes; weak on tabletop identification.",
+      "risk": "Reads as a gallery, not a game.",
+      "html": ".impeccable/mocks/decision/annual.html"
+    },
+    {
+      "id": "challenger-ikeda", "kind": "challenger", "catalogId": "ikeda-datamatics", "label": "Datamatics", "verdict": "declined",
+      "lineage": "data-sublime barcode fields", "palette": ["#000000", "#ffffff"], "materials": ["barcode bars", "mono numerics"],
+      "case": "Loses both: strobing black and white is wrong for long reading.",
+      "kept": "Total tonal commitment."
+    },
+    {
+      "id": "challenger-railref", "kind": "challenger", "catalogId": "rw-centre-rail-reference-setting", "label": "Centre-Rail Reference", "verdict": "declined",
+      "lineage": "wide-margin reference editions", "palette": ["#14100e", "#ba0000", "#efe6d2"], "materials": ["twin columns", "vermilion keys"],
+      "case": "Loses both: two narrow columns do not survive a phone.",
+      "kept": "Lettered keys as a quiet way to jump within a long note."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "canon": true,
+  "canonCard": {
+    "kind": "canon", "label": "The category standard (D&D Beyond style)",
+    "thesis": "Charcoal chrome, red accents and parchment panels, as four real app screens.",
+    "palette": ["#1b1b1b", "#ba0000", "#f4efe2", "#2a2a2a"], "materials": ["charcoal chrome", "parchment panels"],
+    "viewport": "Four screens with a dark top bar, a parchment content panel and a bottom tab bar.",
+    "risk": "Close to a competitor by design.",
+    "html": ".impeccable/mocks/decision/canon.html"
+  },
+  "steer": true
+}

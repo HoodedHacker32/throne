@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Throne Logo Mockups</title>
+<link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Pirata+One&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#ba0000;--ink:#14100e;--bone:#efe6d2}
+*{box-sizing:border-box;margin:0}
+body{background:#2a2420;color:var(--bone);font:16px/1.5 'Source Sans 3',sans-serif;padding:40px 16px 80px}
+.wrap{max-width:1180px;margin:0 auto}
+h1{font:400 40px 'Metamorphous';margin-bottom:8px}
+.lede{color:#b3a58f;max-width:700px;margin-bottom:36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{border-radius:8px;overflow:hidden;border:1px solid #4a3b2c}
+.stage{display:flex;align-items:center;justify-content:center;height:240px;padding:12px}
+.cap{background:#1c1612;padding:12px 16px;color:#b3a58f;font-size:14px}.cap b{color:var(--bone)}
+.dark{background:var(--ink)}.light{background:var(--bone)}.red{background:var(--red)}
+.wm{font-family:'Metamorphous';display:inline-flex;align-items:center;line-height:1;white-space:nowrap}
+.wm svg{height:.92em;width:.92em;aspect-ratio:1;margin:0 .03em;overflow:visible}
+.o{font-family:'Pirata One'}
+.dark .wm{color:var(--bone)}.light .wm{color:var(--ink)}.red .wm{color:var(--bone)}
+.s1{font-size:76px}.s2{font-size:64px}
+.full{grid-column:1/-1}
+h2{font:600 14px 'Source Sans 3';letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:36px 0 14px}
+</style></head><body><div class="wrap">
+<h1>Thr0ne</h1>
+<p class="lede">Your name idea and type choices, set up as logo mockups: Metamorphous for the letters, Pirata One for the 0 on the d20. This is a mockup to react to, not final art. Redraw whichever you like in Affinity.</p>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<!-- full d20 lines, with a big 0 on top -->
+<symbol id="dieFull" viewBox="0 0 200 200"><g fill="none" stroke="currentColor" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"><path d="M100 10L178 55V145L100 190L22 145V55Z"/><path d="M100 46L150 132H50Z"/><path d="M100 10V46M22 55L100 46L178 55M22 145L50 132M178 145L150 132M50 132L100 190L150 132M22 55L50 132M178 55L150 132"/></g>
+<text transform="translate(100 0) scale(1.5 1) translate(-100 0)" x="100" y="132" text-anchor="middle" font-family="Pirata One" font-size="104" fill="var(--zero,#14100e)" stroke="var(--halo,#efe6d2)" stroke-width="10" paint-order="stroke" stroke-linejoin="round">0</text></symbol>
+<!-- simplified: hexagon + triangle, 0 inside -->
+<symbol id="dieSimple" viewBox="0 0 200 200"><g fill="none" stroke="currentColor" stroke-width="12" stroke-linejoin="round"><path d="M100 10L178 55V145L100 190L22 145V55Z"/><path d="M100 46L150 132H50Z"/></g>
+<text transform="translate(100 0) scale(1.5 1) translate(-100 0)" x="100" y="124" text-anchor="middle" font-family="Pirata One" font-size="80" fill="currentColor">0</text></symbol>
+<!-- solid die, knocked-out 0 -->
+<symbol id="dieSolid" viewBox="0 0 200 200"><path d="M100 6L182 53V147L100 194L18 147V53Z" fill="currentColor"/>
+<g fill="none" stroke="var(--cut,#14100e)" stroke-width="5" stroke-linejoin="round" opacity=".55"><path d="M100 46L150 132H50Z"/><path d="M100 6V46M18 53L100 46L182 53M18 147L50 132M182 147L150 132M50 132L100 194L150 132M18 53L50 132M182 53L150 132"/></g>
+<text transform="translate(100 0) scale(1.5 1) translate(-100 0)" x="100" y="134" text-anchor="middle" font-family="Pirata One" font-size="106" fill="var(--cut,#14100e)">0</text></symbol>
+</defs></svg>
+
+<h2>Horizontal wordmark (the die replaces the o)</h2>
+<div class="grid">
+  <div class="card"><div class="stage light"><span class="wm s1">Thr<svg style="color:#ba0000;--zero:#14100e;--halo:#efe6d2"><use href="#dieFull"/></svg>ne</span></div><div class="cap"><b>1. Full die, large 0.</b> Same die as yours with thicker lines and a 0 big enough to read. The halo behind the 0 keeps the lines from cutting through it.</div></div>
+  <div class="card"><div class="stage dark"><span class="wm s1">Thr<svg style="color:#ba0000;--zero:#efe6d2;--halo:#14100e"><use href="#dieFull"/></svg>ne</span></div><div class="cap"><b>2. Same, dark mode.</b> Bone letters on near-black. The red die glows more here.</div></div>
+  <div class="card"><div class="stage light"><span class="wm s1">Thr<svg style="color:#ba0000"><use href="#dieSimple"/></svg>ne</span></div><div class="cap"><b>3. Simplified die.</b> Just the outer shape and the centre triangle, so the 0 carries the face. Holds up at small sizes.</div></div>
+  <div class="card"><div class="stage dark"><span class="wm s1">Thr<svg style="color:#ba0000;--cut:#14100e"><use href="#dieSolid"/></svg>ne</span></div><div class="cap"><b>4. Solid die.</b> A filled red die with the 0 knocked out. The heaviest option, closest in weight to the letters.</div></div>
+</div>
+
+<h2>Icon and app tile</h2>
+<div class="grid">
+  <div class="card"><div class="stage dark"><svg width="170" height="170" style="color:#ba0000;--zero:#efe6d2;--halo:#14100e"><use href="#dieFull"/></svg></div><div class="cap"><b>5. Icon only.</b> The die alone, for favicons and small spaces.</div></div>
+  <div class="card"><div class="stage" style="background:#2a2420"><div style="width:190px;height:190px;border-radius:42px;background:#14100e;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px #0008"><svg width="130" height="130" style="color:#ba0000;--zero:#efe6d2;--halo:#14100e"><use href="#dieFull"/></svg></div></div><div class="cap"><b>6. Dark app tile.</b> A rounded square the shape of a phone or desktop app icon.</div></div>
+  <div class="card"><div class="stage" style="background:#2a2420"><div style="width:190px;height:190px;border-radius:42px;background:#ba0000;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px #0008"><svg width="130" height="130" style="color:#efe6d2;--cut:#ba0000"><use href="#dieSolid"/></svg></div></div><div class="cap"><b>7. Red app tile.</b> A bone-coloured die on red. Loud and recognisable on a home screen.</div></div>
+</div>
+
+<h2>Lockups</h2>
+<div class="grid">
+  <div class="card"><div class="stage light" style="flex-direction:column;gap:8px"><svg width="110" height="110" style="color:#ba0000;--zero:#14100e;--halo:#efe6d2"><use href="#dieFull"/></svg><span class="wm" style="font-size:52px">Throne</span></div><div class="cap"><b>8. Stacked.</b> Die above a plain "Throne". Use where the o-as-die pun would be too fiddly.</div></div>
+  <div class="card"><div class="stage red"><span class="wm s2" style="color:#efe6d2">Thr<svg style="color:#14100e;--cut:#efe6d2"><use href="#dieSolid"/></svg>ne</span></div><div class="cap"><b>9. On red.</b> Bone letters and a black solid die on a red field, for covers and banners.</div></div>
+  <div class="card"><div class="stage dark" style="flex-direction:column;gap:14px"><span class="wm s2">Thr<svg style="color:#ba0000;--zero:#efe6d2;--halo:#14100e"><use href="#dieFull"/></svg>ne</span><span style="font:italic 20px 'Metamorphous';color:#b3a58f">notes for the whole table</span></div><div class="cap"><b>10. With a tagline.</b> A placeholder tagline, just to see the spacing. Rewrite or drop it.</div></div>
+</div>
+
+<h2>Small sizes</h2>
+<div class="grid"><div class="card full"><div class="stage light" style="gap:48px;justify-content:flex-start;padding-left:48px"><span class="wm" style="font-size:40px">Thr<svg style="color:#ba0000;--zero:#14100e;--halo:#efe6d2"><use href="#dieFull"/></svg>ne</span><span class="wm" style="font-size:24px">Thr<svg style="color:#ba0000;--zero:#14100e;--halo:#efe6d2"><use href="#dieFull"/></svg>ne</span><span class="wm" style="font-size:16px">Thr<svg style="color:#ba0000;--zero:#14100e;--halo:#efe6d2"><use href="#dieFull"/></svg>ne</span><svg width="32" height="32" style="color:#ba0000;--zero:#14100e;--halo:#efe6d2"><use href="#dieFull"/></svg><svg width="16" height="16" style="color:#ba0000;--zero:#14100e;--halo:#efe6d2"><use href="#dieFull"/></svg></div><div class="cap"><b>Scale test.</b> The full die starts to clog around 16px. The simplified or solid versions are the ones to use for a favicon.</div></div></div>
+</div></body></html>

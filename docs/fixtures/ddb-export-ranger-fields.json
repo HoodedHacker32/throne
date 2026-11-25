@@ -1,0 +1,4652 @@
+[
+ {
+  "page": 1,
+  "name": "CharacterName",
+  "type": "/Tx",
+  "value": "Sample Ranger"
+ },
+ {
+  "page": 1,
+  "name": "CLASS  LEVEL",
+  "type": "/Tx",
+  "value": "Ranger 1"
+ },
+ {
+  "page": 1,
+  "name": "PLAYER NAME",
+  "type": "/Tx",
+  "value": "Player"
+ },
+ {
+  "page": 1,
+  "name": "RACE",
+  "type": "/Tx",
+  "value": "Elf"
+ },
+ {
+  "page": 1,
+  "name": "BACKGROUND",
+  "type": "/Tx",
+  "value": "Criminal / Spy"
+ },
+ {
+  "page": 1,
+  "name": "EXPERIENCE POINTS",
+  "type": "/Tx",
+  "value": "(Milestone)"
+ },
+ {
+  "page": 1,
+  "name": "STR",
+  "type": "/Tx",
+  "value": "10"
+ },
+ {
+  "page": 1,
+  "name": "STRmod",
+  "type": "/Tx",
+  "value": "+0"
+ },
+ {
+  "page": 1,
+  "name": "DEX",
+  "type": "/Tx",
+  "value": "18"
+ },
+ {
+  "page": 1,
+  "name": "DEXmod ",
+  "type": "/Tx",
+  "value": "+4"
+ },
+ {
+  "page": 1,
+  "name": "CON",
+  "type": "/Tx",
+  "value": "14"
+ },
+ {
+  "page": 1,
+  "name": "CONmod",
+  "type": "/Tx",
+  "value": "+2"
+ },
+ {
+  "page": 1,
+  "name": "INT",
+  "type": "/Tx",
+  "value": "17"
+ },
+ {
+  "page": 1,
+  "name": "INTmod",
+  "type": "/Tx",
+  "value": "+3"
+ },
+ {
+  "page": 1,
+  "name": "WIS",
+  "type": "/Tx",
+  "value": "10"
+ },
+ {
+  "page": 1,
+  "name": "WISmod",
+  "type": "/Tx",
+  "value": "+0"
+ },
+ {
+  "page": 1,
+  "name": "CHA",
+  "type": "/Tx",
+  "value": "16"
+ },
+ {
+  "page": 1,
+  "name": "CHamod",
+  "type": "/Tx",
+  "value": "+3"
+ },
+ {
+  "page": 1,
+  "name": "StrProf",
+  "type": "/Tx",
+  "value": "•"
+ },
+ {
+  "page": 1,
+  "name": "ST Strength",
+  "type": "/Tx",
+  "value": "+2"
+ },
+ {
+  "page": 1,
+  "name": "DexProf",
+  "type": "/Tx",
+  "value": "•"
+ },
+ {
+  "page": 1,
+  "name": "ST Dexterity",
+  "type": "/Tx",
+  "value": "+6"
+ },
+ {
+  "page": 1,
+  "name": "ConProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "ST Constitution",
+  "type": "/Tx",
+  "value": "+2"
+ },
+ {
+  "page": 1,
+  "name": "IntProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "ST Intelligence",
+  "type": "/Tx",
+  "value": "+3"
+ },
+ {
+  "page": 1,
+  "name": "WisProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "ST Wisdom",
+  "type": "/Tx",
+  "value": "+0"
+ },
+ {
+  "page": 1,
+  "name": "ChaProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "ST Charisma",
+  "type": "/Tx",
+  "value": "+3"
+ },
+ {
+  "page": 1,
+  "name": "Defenses",
+  "type": "/Tx",
+  "value": "Immunities - Magical Sleep"
+ },
+ {
+  "page": 1,
+  "name": "SaveModifiers",
+  "type": "/Tx",
+  "value": "Advantage Made to avoid or end the Charmed condition"
+ },
+ {
+  "page": 1,
+  "name": "AcrobaticsProf",
+  "type": "/Tx",
+  "value": "P"
+ },
+ {
+  "page": 1,
+  "name": "Acrobatics",
+  "type": "/Tx",
+  "value": "+6"
+ },
+ {
+  "page": 1,
+  "name": "AcrobaticsMod",
+  "type": "/Tx",
+  "value": "DEX"
+ },
+ {
+  "page": 1,
+  "name": "AnimalHandlingProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Animal",
+  "type": "/Tx",
+  "value": "+0"
+ },
+ {
+  "page": 1,
+  "name": "AnimalMod",
+  "type": "/Tx",
+  "value": "WIS"
+ },
+ {
+  "page": 1,
+  "name": "ArcanaProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Arcana",
+  "type": "/Tx",
+  "value": "+3"
+ },
+ {
+  "page": 1,
+  "name": "ArcanaMod",
+  "type": "/Tx",
+  "value": "INT"
+ },
+ {
+  "page": 1,
+  "name": "AthleticsProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Athletics",
+  "type": "/Tx",
+  "value": "+0"
+ },
+ {
+  "page": 1,
+  "name": "AthleticsMod",
+  "type": "/Tx",
+  "value": "STR"
+ },
+ {
+  "page": 1,
+  "name": "DeceptionProf",
+  "type": "/Tx",
+  "value": "P"
+ },
+ {
+  "page": 1,
+  "name": "Deception",
+  "type": "/Tx",
+  "value": "+5"
+ },
+ {
+  "page": 1,
+  "name": "DeceptionMod",
+  "type": "/Tx",
+  "value": "CHA"
+ },
+ {
+  "page": 1,
+  "name": "HistoryProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "History",
+  "type": "/Tx",
+  "value": "+3"
+ },
+ {
+  "page": 1,
+  "name": "HistoryMod",
+  "type": "/Tx",
+  "value": "INT"
+ },
+ {
+  "page": 1,
+  "name": "InsightProf",
+  "type": "/Tx",
+  "value": "P"
+ },
+ {
+  "page": 1,
+  "name": "Insight",
+  "type": "/Tx",
+  "value": "+2"
+ },
+ {
+  "page": 1,
+  "name": "InsightMod",
+  "type": "/Tx",
+  "value": "WIS"
+ },
+ {
+  "page": 1,
+  "name": "IntimidationProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Intimidation",
+  "type": "/Tx",
+  "value": "+3"
+ },
+ {
+  "page": 1,
+  "name": "IntimidationMod",
+  "type": "/Tx",
+  "value": "CHA"
+ },
+ {
+  "page": 1,
+  "name": "InvestigationProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Investigation",
+  "type": "/Tx",
+  "value": "+3"
+ },
+ {
+  "page": 1,
+  "name": "InvestigationMod",
+  "type": "/Tx",
+  "value": "INT"
+ },
+ {
+  "page": 1,
+  "name": "MedicineProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Medicine",
+  "type": "/Tx",
+  "value": "+0"
+ },
+ {
+  "page": 1,
+  "name": "MedicineMod",
+  "type": "/Tx",
+  "value": "WIS"
+ },
+ {
+  "page": 1,
+  "name": "NatureProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Nature",
+  "type": "/Tx",
+  "value": "+3"
+ },
+ {
+  "page": 1,
+  "name": "NatureMod",
+  "type": "/Tx",
+  "value": "INT"
+ },
+ {
+  "page": 1,
+  "name": "PerceptionProf",
+  "type": "/Tx",
+  "value": "P"
+ },
+ {
+  "page": 1,
+  "name": "Perception",
+  "type": "/Tx",
+  "value": "+2"
+ },
+ {
+  "page": 1,
+  "name": "PerceptionMod",
+  "type": "/Tx",
+  "value": "WIS"
+ },
+ {
+  "page": 1,
+  "name": "PerformanceProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Performance",
+  "type": "/Tx",
+  "value": "+3"
+ },
+ {
+  "page": 1,
+  "name": "PerformanceMod",
+  "type": "/Tx",
+  "value": "CHA"
+ },
+ {
+  "page": 1,
+  "name": "PersuasionProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Persuasion",
+  "type": "/Tx",
+  "value": "+3"
+ },
+ {
+  "page": 1,
+  "name": "PersuasionMod",
+  "type": "/Tx",
+  "value": "CHA"
+ },
+ {
+  "page": 1,
+  "name": "ReligionProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Religion",
+  "type": "/Tx",
+  "value": "+3"
+ },
+ {
+  "page": 1,
+  "name": "SleightOfHandProf",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "SleightofHand",
+  "type": "/Tx",
+  "value": "+4"
+ },
+ {
+  "page": 1,
+  "name": "StealthProf",
+  "type": "/Tx",
+  "value": "P"
+ },
+ {
+  "page": 1,
+  "name": "Stealth ",
+  "type": "/Tx",
+  "value": "+6"
+ },
+ {
+  "page": 1,
+  "name": "SurvivalProf",
+  "type": "/Tx",
+  "value": "P"
+ },
+ {
+  "page": 1,
+  "name": "Survival",
+  "type": "/Tx",
+  "value": "+2"
+ },
+ {
+  "page": 1,
+  "name": "CustomProf1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Custom Skill Bonus 1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "CustomSkill1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "CustomProf2",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Custom Skill Bonus 2",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "CustomSkill2",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "CustomProf3",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Custom Skill Bonus 3",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "CustomSkill3",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Passive1",
+  "type": "/Tx",
+  "value": "12"
+ },
+ {
+  "page": 1,
+  "name": "Passive2",
+  "type": "/Tx",
+  "value": "12"
+ },
+ {
+  "page": 1,
+  "name": "Passive3",
+  "type": "/Tx",
+  "value": "13"
+ },
+ {
+  "page": 1,
+  "name": "AdditionalSenses",
+  "type": "/Tx",
+  "value": "Darkvision 60 ft."
+ },
+ {
+  "page": 1,
+  "name": "Init",
+  "type": "/Tx",
+  "value": "+4"
+ },
+ {
+  "page": 1,
+  "name": "AC",
+  "type": "/Tx",
+  "value": "14"
+ },
+ {
+  "page": 1,
+  "name": "ProfBonus",
+  "type": "/Tx",
+  "value": "+2"
+ },
+ {
+  "page": 1,
+  "name": "AbilitySaveDC",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "AbilitySaveScore1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "AbilitySaveScore2",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "AbilitySaveDC2",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Speed",
+  "type": "/Tx",
+  "value": "35 ft. (Walking)"
+ },
+ {
+  "page": 1,
+  "name": "MaxHP",
+  "type": "/Tx",
+  "value": "12"
+ },
+ {
+  "page": 1,
+  "name": "CurrentHP",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "TempHP",
+  "type": "/Tx",
+  "value": "--"
+ },
+ {
+  "page": 1,
+  "name": "Total",
+  "type": "/Tx",
+  "value": "1d10"
+ },
+ {
+  "page": 1,
+  "name": "HD",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Check Box 12",
+  "type": "/Btn",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Check Box 13",
+  "type": "/Btn",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Check Box 14",
+  "type": "/Btn",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Check Box 15",
+  "type": "/Btn",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Check Box 16",
+  "type": "/Btn",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Check Box 17",
+  "type": "/Btn",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "ProficienciesLang",
+  "type": "/Tx",
+  "value": "=== ARMOR === \nLight Armor, Medium Armor, Shields \n\n=== WEAPONS === \nMartial Weapons, Simple Weapons \n\n=== TOOLS === \nDarts, Thieves' Tools \n\n=== LANGUAGES === \nCommon, Elvish, Thayan"
+ },
+ {
+  "page": 1,
+  "name": "ReligionMod",
+  "type": "/Tx",
+  "value": "INT"
+ },
+ {
+  "page": 1,
+  "name": "SleightofHandMod",
+  "type": "/Tx",
+  "value": "DEX"
+ },
+ {
+  "page": 1,
+  "name": "StealthMod",
+  "type": "/Tx",
+  "value": "DEX"
+ },
+ {
+  "page": 1,
+  "name": "SurvivalMod",
+  "type": "/Tx",
+  "value": "WIS"
+ },
+ {
+  "page": 1,
+  "name": "Actions1",
+  "type": "/Tx",
+  "value": "=== ACTIONS === \n(description removed)\n\n=== BONUS ACTIONS === \n(description removed)\n\n=== SPECIAL === \n(description removed)"
+ },
+ {
+  "page": 1,
+  "name": "Actions2",
+  "type": "/Tx",
+  "value": "(description removed)"
+ },
+ {
+  "page": 1,
+  "name": "Wpn Name",
+  "type": "/Tx",
+  "value": "Crossbow, Hand"
+ },
+ {
+  "page": 1,
+  "name": "Wpn1 AtkBonus",
+  "type": "/Tx",
+  "value": "+6"
+ },
+ {
+  "page": 1,
+  "name": "Wpn1 Damage",
+  "type": "/Tx",
+  "value": "1d6+4 Piercing"
+ },
+ {
+  "page": 1,
+  "name": "Wpn Notes 1",
+  "type": "/Tx",
+  "value": "Martial, Ammunition, Range, Light, Loading, Vex, Range (30/120)"
+ },
+ {
+  "page": 1,
+  "name": "Wpn Name 2",
+  "type": "/Tx",
+  "value": "Unarmed Strike"
+ },
+ {
+  "page": 1,
+  "name": "Wpn2 AtkBonus ",
+  "type": "/Tx",
+  "value": "+2"
+ },
+ {
+  "page": 1,
+  "name": "Wpn2 Damage ",
+  "type": "/Tx",
+  "value": "1 Bludgeoning"
+ },
+ {
+  "page": 1,
+  "name": "Wpn Notes 2",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn Name 3",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn3 AtkBonus  ",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn3 Damage ",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn Notes 3",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn Name 4",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn4 AtkBonus",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn4 Damage",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn Notes 4",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn Name 5",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn5 AtkBonus",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn5 Damage",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn Notes 5",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn Name 6",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn6 AtkBonus",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn6 Damage",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Wpn Notes 6",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 1,
+  "name": "Inspiration",
+  "type": "/Btn",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "CharacterName2",
+  "type": "/Tx",
+  "value": "Sample Ranger"
+ },
+ {
+  "page": 2,
+  "name": "CLASS  LEVEL2",
+  "type": "/Tx",
+  "value": "Ranger 1"
+ },
+ {
+  "page": 2,
+  "name": "PLAYER NAME2",
+  "type": "/Tx",
+  "value": "Player"
+ },
+ {
+  "page": 2,
+  "name": "RACE2",
+  "type": "/Tx",
+  "value": "Elf"
+ },
+ {
+  "page": 2,
+  "name": "BACKGROUND2",
+  "type": "/Tx",
+  "value": "Criminal / Spy"
+ },
+ {
+  "page": 2,
+  "name": "EXPERIENCE POINTS2",
+  "type": "/Tx",
+  "value": "(Milestone)"
+ },
+ {
+  "page": 2,
+  "name": "FeaturesTraits1",
+  "type": "/Tx",
+  "value": "=== RANGER FEATURES === \n\n* Core Ranger Traits • PHB-2024 119 \n\n* Spellcasting • PHB-2024 119 \n\n* Favored Enemy • PHB-2024 119 \n(description removed)\n\n(description removed)\n\n* Weapon Mastery • PHB-2024 120 \n\n\n=== ELF SPECIES TRAITS === \n\n* Creature Type • PHB-2024 190 \n(description removed)\n\n* Size • PHB-2024 190 \n(description removed)\n\n* Speed • PHB-2024 190 \n(description removed)\n\n* Darkvision • PHB-2024 190 \n(description removed)\n\n* Elven Lineage • PHB-2024 190 \n(description removed)\n\n(description removed)\n\n* Elven Lineage Spells • PHB-2024 189 \n\n(description removed)"
+ },
+ {
+  "page": 2,
+  "name": "FeaturesTraits2",
+  "type": "/Tx",
+  "value": "* Fey Ancestry • PHB-2024 190 \n(description removed)\n\n* Keen Senses • PHB-2024 190 \n(description removed)\n\n* Trance • PHB-2024 190 \n(description removed)\n\n* Ability Score Increases • PHB-2024 \n(description removed)\n\n(description removed)\n\n\n=== FEATS === \n\n* Weapon Mastery • PHB-2024 120 \n\n(description removed)\n\n(description removed)\n\n(description removed)\n\n(description removed)"
+ },
+ {
+  "page": 2,
+  "name": "FeaturesTraits3",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "CP",
+  "type": "/Tx",
+  "value": "0"
+ },
+ {
+  "page": 2,
+  "name": "SP",
+  "type": "/Tx",
+  "value": "0"
+ },
+ {
+  "page": 2,
+  "name": "EP",
+  "type": "/Tx",
+  "value": "0"
+ },
+ {
+  "page": 2,
+  "name": "GP",
+  "type": "/Tx",
+  "value": "22"
+ },
+ {
+  "page": 2,
+  "name": "PP",
+  "type": "/Tx",
+  "value": "0"
+ },
+ {
+  "page": 2,
+  "name": "Weight Carried",
+  "type": "/Tx",
+  "value": "91.42 lb."
+ },
+ {
+  "page": 2,
+  "name": "Encumbered",
+  "type": "/Tx",
+  "value": "150 lb."
+ },
+ {
+  "page": 2,
+  "name": "PushDragLift",
+  "type": "/Tx",
+  "value": "300 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name0",
+  "type": "/Tx",
+  "value": "Studded Leather"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty0",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight0",
+  "type": "/Tx",
+  "value": "13 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name1",
+  "type": "/Tx",
+  "value": "Crossbow, Hand"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty1",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight1",
+  "type": "/Tx",
+  "value": "3 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name2",
+  "type": "/Tx",
+  "value": "Scimitar"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty2",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight2",
+  "type": "/Tx",
+  "value": "3 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name3",
+  "type": "/Tx",
+  "value": "Shortsword"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty3",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight3",
+  "type": "/Tx",
+  "value": "2 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name4",
+  "type": "/Tx",
+  "value": "Revolver"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty4",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight4",
+  "type": "/Tx",
+  "value": "3 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name5",
+  "type": "/Tx",
+  "value": "Abacus"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty5",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight5",
+  "type": "/Tx",
+  "value": "2 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name6",
+  "type": "/Tx",
+  "value": "Clothes, Common"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty6",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight6",
+  "type": "/Tx",
+  "value": "3 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name7",
+  "type": "/Tx",
+  "value": "Crowbar"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty7",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight7",
+  "type": "/Tx",
+  "value": "5 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name8",
+  "type": "/Tx",
+  "value": "Backpack"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty8",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight8",
+  "type": "/Tx",
+  "value": "5 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name9",
+  "type": "/Tx",
+  "value": "Quiver"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty9",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight9",
+  "type": "/Tx",
+  "value": "1 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name10",
+  "type": "/Tx",
+  "value": "Sprig of Mistletoe"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty10",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight10",
+  "type": "/Tx",
+  "value": "--"
+ },
+ {
+  "page": 2,
+  "name": "Eq Name11",
+  "type": "/Tx",
+  "value": "Oil"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty11",
+  "type": "/Tx",
+  "value": "2"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight11",
+  "type": "/Tx",
+  "value": "2 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name12",
+  "type": "/Tx",
+  "value": "Rations"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty12",
+  "type": "/Tx",
+  "value": "10"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight12",
+  "type": "/Tx",
+  "value": "20 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name13",
+  "type": "/Tx",
+  "value": "Rope"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty13",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight13",
+  "type": "/Tx",
+  "value": "5 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name14",
+  "type": "/Tx",
+  "value": "Bedroll"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty14",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight14",
+  "type": "/Tx",
+  "value": "7 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name15",
+  "type": "/Tx",
+  "value": "Tinderbox"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty15",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight15",
+  "type": "/Tx",
+  "value": "1 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name16",
+  "type": "/Tx",
+  "value": "Torch"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty16",
+  "type": "/Tx",
+  "value": "10"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight16",
+  "type": "/Tx",
+  "value": "10 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name17",
+  "type": "/Tx",
+  "value": "Waterskin"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty17",
+  "type": "/Tx",
+  "value": "1"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight17",
+  "type": "/Tx",
+  "value": "5 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name18",
+  "type": "/Tx",
+  "value": "Crossbow Bolts"
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty18",
+  "type": "/Tx",
+  "value": "19"
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight18",
+  "type": "/Tx",
+  "value": "1.42 lb."
+ },
+ {
+  "page": 2,
+  "name": "Eq Name19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Name20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Name21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Name22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Name23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Name24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Name25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Qty25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Eq Weight25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Attuned Name1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Attuned Qty1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Attuned Weight1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Attuned Name2",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Attuned Qty2",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Attuned Weight2",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Attuned Name3",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "Attuned Qty3",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 2,
+  "name": "AttunedWeight3",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 3,
+  "name": "CharacterName4",
+  "type": "/Tx",
+  "value": "Sample Ranger"
+ },
+ {
+  "page": 3,
+  "name": "GENDER",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 3,
+  "name": "AGE",
+  "type": "/Tx",
+  "value": "100"
+ },
+ {
+  "page": 3,
+  "name": "SIZE",
+  "type": "/Tx",
+  "value": "Medium"
+ },
+ {
+  "page": 3,
+  "name": "HEIGHT",
+  "type": "/Tx",
+  "value": "170 cm"
+ },
+ {
+  "page": 3,
+  "name": "WEIGHT",
+  "type": "/Tx",
+  "value": "120"
+ },
+ {
+  "page": 3,
+  "name": "ALIGNMENT",
+  "type": "/Tx",
+  "value": "Neutral"
+ },
+ {
+  "page": 3,
+  "name": "FAITH",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 3,
+  "name": "SKIN",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 3,
+  "name": "EYES",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 3,
+  "name": "HAIR",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 3,
+  "name": "CHARACTER IMAGE",
+  "type": "/Btn",
+  "value": ""
+ },
+ {
+  "page": 3,
+  "name": "AlliesOrganizations",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 3,
+  "name": "PersonalityTraits ",
+  "type": "/Tx",
+  "value": "Sample personality trait."
+ },
+ {
+  "page": 3,
+  "name": "Ideals",
+  "type": "/Tx",
+  "value": "Sample ideal."
+ },
+ {
+  "page": 3,
+  "name": "Bonds",
+  "type": "/Tx",
+  "value": "Sample bond."
+ },
+ {
+  "page": 3,
+  "name": "Appearance",
+  "type": "/Tx",
+  "value": "Sample appearance."
+ },
+ {
+  "page": 3,
+  "name": "Flaws",
+  "type": "/Tx",
+  "value": "Sample flaw."
+ },
+ {
+  "page": 3,
+  "name": "Backstory",
+  "type": "/Tx",
+  "value": "Sample backstory. This fixture is a scrubbed D&D Beyond export used to test the importer."
+ },
+ {
+  "page": 3,
+  "name": "AdditionalNotes1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 3,
+  "name": "AdditionalNotes2",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellCastingAbility0",
+  "type": "/Tx",
+  "value": "WIS"
+ },
+ {
+  "page": 4,
+  "name": "spellSaveDC0",
+  "type": "/Tx",
+  "value": "10"
+ },
+ {
+  "page": 4,
+  "name": "spellAtkBonus0",
+  "type": "/Tx",
+  "value": "+2"
+ },
+ {
+  "page": 4,
+  "name": "spellCastingClass0",
+  "type": "/Tx",
+  "value": "Ranger"
+ },
+ {
+  "page": 4,
+  "name": "spellPreparedHeader0",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellHeader0",
+  "type": "/Tx",
+  "value": "=== CANTRIPS ==="
+ },
+ {
+  "page": 4,
+  "name": "spellSlotHeader0",
+  "type": "/Tx",
+  "value": "(At Will)"
+ },
+ {
+  "page": 4,
+  "name": "spellSaveHitHeader0",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellCastingTimeHeader0",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellRangeHeader0",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellComponentsHeader0",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellDurationHeader0",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellPageHeader0",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellNotesHeader0",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellPrepared0",
+  "type": "/Tx",
+  "value": "O"
+ },
+ {
+  "page": 4,
+  "name": "spellName0",
+  "type": "/Tx",
+  "value": "Druidcraft"
+ },
+ {
+  "page": 4,
+  "name": "spellSource0",
+  "type": "/Tx",
+  "value": "Elven Lineage Spells"
+ },
+ {
+  "page": 4,
+  "name": "spellSaveHit0",
+  "type": "/Tx",
+  "value": "--"
+ },
+ {
+  "page": 4,
+  "name": "spellCastingTime0",
+  "type": "/Tx",
+  "value": "1A"
+ },
+ {
+  "page": 4,
+  "name": "spellRange0",
+  "type": "/Tx",
+  "value": "30 ft."
+ },
+ {
+  "page": 4,
+  "name": "spellComponents0",
+  "type": "/Tx",
+  "value": "V,S"
+ },
+ {
+  "page": 4,
+  "name": "spellDuration0",
+  "type": "/Tx",
+  "value": "Instantaneous"
+ },
+ {
+  "page": 4,
+  "name": "spellPage0",
+  "type": "/Tx",
+  "value": "PHB-2024 266"
+ },
+ {
+  "page": 4,
+  "name": "spellNotes0",
+  "type": "/Tx",
+  "value": "V/S"
+ },
+ {
+  "page": 4,
+  "name": "spellPreparedBlankHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellNameBlankHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellSourceBlankHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellSaveHitBlankHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellCastingTimeBlankHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellRangeBlankHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellComponentsBlankHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellDurationBlankHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellPageBlankHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellNotesBlankHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellPreparedHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellHeader1",
+  "type": "/Tx",
+  "value": "=== 1st LEVEL ==="
+ },
+ {
+  "page": 4,
+  "name": "spellSlotHeader1",
+  "type": "/Tx",
+  "value": "2 Slots OO"
+ },
+ {
+  "page": 4,
+  "name": "spellSaveHitHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellCastingTimeHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellRangeHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellComponentsHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellDurationHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellPageHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellNotesHeader1",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "spellPrepared1",
+  "type": "/Tx",
+  "value": "P"
+ },
+ {
+  "page": 4,
+  "name": "spellName1",
+  "type": "/Tx",
+  "value": "Hunter's Mark"
+ },
+ {
+  "page": 4,
+  "name": "spellSource1",
+  "type": "/Tx",
+  "value": "Favored Enemy (Always Prepared)"
+ },
+ {
+  "page": 4,
+  "name": "spellSaveHit1",
+  "type": "/Tx",
+  "value": "--"
+ },
+ {
+  "page": 4,
+  "name": "spellCastingTime1",
+  "type": "/Tx",
+  "value": "1BA"
+ },
+ {
+  "page": 4,
+  "name": "spellRange1",
+  "type": "/Tx",
+  "value": "90 ft."
+ },
+ {
+  "page": 4,
+  "name": "spellComponents1",
+  "type": "/Tx",
+  "value": "V"
+ },
+ {
+  "page": 4,
+  "name": "spellDuration1",
+  "type": "/Tx",
+  "value": "Concentration, up to 1 hour"
+ },
+ {
+  "page": 4,
+  "name": "spellPage1",
+  "type": "/Tx",
+  "value": "PHB-2024 287"
+ },
+ {
+  "page": 4,
+  "name": "spellNotes1",
+  "type": "/Tx",
+  "value": "Ext. D: (See Description)*, D: 1h, V"
+ },
+ {
+  "page": 4,
+  "name": "Prepared5",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName5",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource5",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit5",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime5",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range5",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components5",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration5",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source5",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes5",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared6",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName6",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource6",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit6",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime6",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range6",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components6",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration6",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source6",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes6",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared7",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName7",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource7",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit7",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime7",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range7",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components7",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration7",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source7",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes7",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared8",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName8",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource8",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit8",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime8",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range8",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components8",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration8",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source8",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes8",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared9",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName9",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource9",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit9",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime9",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range9",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components9",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration9",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source9",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes9",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared10",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName10",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource10",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit10",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime10",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range10",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components10",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration10",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source10",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes10",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared11",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName11",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource11",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit11",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime11",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range11",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components11",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration11",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source11",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes11",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared12",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName12",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource12",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit12",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime12",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range12",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components12",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration12",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source12",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes12",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared13",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName13",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource13",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit13",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime13",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range13",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components13",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration13",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source13",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes13",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared14",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName14",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource14",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit14",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime14",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range14",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components14",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration14",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source14",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes14",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared15",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName15",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource15",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit15",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime15",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range15",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components15",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration15",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source15",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes15",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared16",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName16",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource16",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit16",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime16",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range16",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components16",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration16",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source16",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes16",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared17",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName17",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource17",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit17",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime17",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range17",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components17",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration17",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source17",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes17",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared18",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName18",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource18",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit18",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime18",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range18",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components18",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration18",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source18",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes18",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes19",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes20",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes21",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes22",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes23",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes24",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes25",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared26",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName26",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource26",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit26",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime26",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range26",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components26",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration26",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source26",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes26",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared27",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName27",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource27",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit27",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime27",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range27",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components27",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration27",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source27",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes27",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared28",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName28",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource28",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit28",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime28",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range28",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components28",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration28",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source28",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes28",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared29",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName29",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource29",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit29",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime29",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range29",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components29",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration29",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source29",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes29",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared30",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName30",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource30",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit30",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime30",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range30",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components30",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration30",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source30",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes30",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared31",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName31",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource31",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit31",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime31",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range31",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components31",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration31",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source31",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes31",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared32",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName32",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource32",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit32",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime32",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range32",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components32",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration32",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source32",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes32",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared33",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName33",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource33",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit33",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime33",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range33",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components33",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration33",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source33",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes33",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared34",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName34",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource34",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit34",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime34",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range34",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components34",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration34",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source34",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes34",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared35",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName35",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource35",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit35",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime35",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range35",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components35",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration35",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source35",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes35",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared36",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName36",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource36",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit36",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime36",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range36",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components36",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration36",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source36",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes36",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared37",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName37",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource37",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit37",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime37",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range37",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components37",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration37",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source37",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes37",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared38",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName38",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource38",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit38",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime38",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range38",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components38",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration38",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source38",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes38",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared39",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName39",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource39",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit39",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime39",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range39",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components39",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration39",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source39",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes39",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared40",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName40",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource40",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit40",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime40",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range40",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components40",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration40",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source40",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes40",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared41",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName41",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource41",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit41",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime41",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range41",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components41",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration41",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source41",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes41",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared42",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName42",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource42",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit42",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime42",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range42",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components42",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration42",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source42",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes42",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared43",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName43",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource43",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit43",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime43",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range43",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components43",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration43",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source43",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes43",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared44",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName44",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource44",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit44",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime44",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range44",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components44",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration44",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source44",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes44",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared45",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName45",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource45",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit45",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime45",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range45",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components45",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration45",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source45",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes45",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared46",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName46",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource46",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit46",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime46",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range46",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components46",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration46",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source46",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes46",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared47",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName47",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource47",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit47",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime47",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range47",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components47",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration47",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source47",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes47",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared48",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName48",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource48",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit48",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime48",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range48",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components48",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration48",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source48",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes48",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Prepared49",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellName49",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SpellSource49",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "SaveHit49",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "CastingTime49",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Range49",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Components49",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Duration49",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Source49",
+  "type": "/Tx",
+  "value": ""
+ },
+ {
+  "page": 4,
+  "name": "Notes49",
+  "type": "/Tx",
+  "value": ""
+ }
+]

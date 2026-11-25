@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Throne Lockups</title>
+<link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Pirata+One&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#ba0000;--ink:#14100e;--bone:#efe6d2}
+*{box-sizing:border-box;margin:0}
+body{background:#2a2420;color:var(--bone);font:16px/1.5 'Source Sans 3',sans-serif;padding:40px 16px 80px}
+.wrap{max-width:1180px;margin:0 auto}
+h1{font:400 36px 'Metamorphous';margin-bottom:8px}
+.lede{color:#b3a58f;max-width:720px;margin-bottom:28px}
+h2{font:600 14px 'Source Sans 3';letter-spacing:.16em;text-transform:uppercase;color:#d44;margin:36px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.card{border-radius:8px;overflow:hidden;border:1px solid #4a3b2c}
+.stage{display:flex;align-items:center;justify-content:center;height:230px;padding:12px}
+.cap{background:#1c1612;padding:12px 16px;color:#b3a58f;font-size:14px}.cap b{color:var(--bone)}
+.dark{background:var(--ink);color:var(--bone)}.light{background:var(--bone);color:var(--ink)}
+.wm{font-family:'Metamorphous';display:inline-flex;align-items:center;line-height:1;white-space:nowrap}
+.wm svg{height:.92em;width:.92em;aspect-ratio:1;margin:0 .03em;overflow:visible}
+.desc{font:600 .2em 'Source Sans 3';letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.tile{width:190px;height:190px;border-radius:42px;background:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px #0008}
+ul{color:#b3a58f;max-width:760px;padding-left:20px}li{margin:4px 0}li b{color:var(--bone)}
+</style></head><body><div class="wrap">
+<h1>Throne: chosen pieces and lockups</h1>
+<p class="lede">Your picks: icon 6, wordmark 1 on light, wordmark 2 on dark with the same logo in both modes. Lockups use a plain-language descriptor instead of a tagline.</p>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="dieFull" viewBox="0 0 200 200"><g fill="none" stroke="currentColor" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"><path d="M100 10L178 55V145L100 190L22 145V55Z"/><path d="M100 46L150 132H50Z"/><path d="M100 10V46M22 55L100 46L178 55M22 145L50 132M178 145L150 132M50 132L100 190L150 132M22 55L50 132M178 55L150 132"/></g>
+<text transform="translate(100 0) scale(1.5 1) translate(-100 0)" x="100" y="132" text-anchor="middle" font-family="Pirata One" font-size="104" fill="var(--zero,#14100e)" stroke="var(--halo,#efe6d2)" stroke-width="10" paint-order="stroke" stroke-linejoin="round">0</text></symbol>
+</defs></svg>
+
+<h2>The chosen set</h2>
+<div class="grid">
+  <div class="card"><div class="stage light"><span class="wm" style="font-size:76px">Thr<svg style="color:#ba0000;--zero:#14100e;--halo:#efe6d2"><use href="#dieFull"/></svg>ne</span></div><div class="cap"><b>Wordmark, light.</b> Pick 1.</div></div>
+  <div class="card"><div class="stage dark"><span class="wm" style="font-size:76px">Thr<svg style="color:#ba0000;--zero:#efe6d2;--halo:#14100e"><use href="#dieFull"/></svg>ne</span></div><div class="cap"><b>Wordmark, dark.</b> Pick 2. Only the letters and the 0 flip colour. The red die is identical in both modes.</div></div>
+  <div class="card"><div class="stage" style="background:#2a2420"><div class="tile"><svg width="130" height="130" style="color:#ba0000;--zero:#efe6d2;--halo:#14100e"><use href="#dieFull"/></svg></div></div><div class="cap"><b>App icon.</b> Pick 6.</div></div>
+</div>
+
+<h2>Lockups with a descriptor</h2>
+<div class="grid">
+  <div class="card"><div class="stage light" style="gap:14px"><div class="tile" style="width:80px;height:80px;border-radius:18px;flex:none"><svg width="56" height="56" style="color:#ba0000;--zero:#efe6d2;--halo:#14100e"><use href="#dieFull"/></svg></div><div style="display:flex;flex-direction:column;gap:10px"><span class="wm" style="font-size:44px">Throne</span><span class="desc" style="font-size:9px">Campaign manager for tabletop RPGs</span></div></div><div class="cap"><b>A. Icon left.</b> The tile beside a plain "Throne". The die is the icon, so the wordmark spells the name normally.</div></div>
+  <div class="card"><div class="stage dark" style="flex-direction:column;gap:12px"><svg width="96" height="96" style="color:#ba0000;--zero:#efe6d2;--halo:#14100e"><use href="#dieFull"/></svg><span class="wm" style="font-size:50px">Throne</span><span class="desc" style="font-size:11px">Campaign manager for tabletop RPGs</span></div><div class="cap"><b>B. Stacked.</b> Die above the plain name, descriptor underneath. Works centred, like on a splash screen.</div></div>
+  <div class="card"><div class="stage light" style="flex-direction:column;gap:14px"><span class="wm" style="font-size:66px">Thr<svg style="color:#ba0000;--zero:#14100e;--halo:#efe6d2"><use href="#dieFull"/></svg>ne</span><div style="width:60%;height:2px;background:#ba0000"></div><span class="desc" style="font-size:11px">Campaign manager for tabletop RPGs</span></div><div class="cap"><b>C. Wordmark, rule, descriptor.</b> Keeps the die-as-o wordmark and adds a red rule and the descriptor. Best for the website header.</div></div>
+</div>
+
+<h2>What people call this kind of app</h2>
+<ul>
+  <li><b>Campaign manager</b> is the most common term in app stores and plugins. It's what D&amp;D Beyond's own campaign pages, Game Master 5th Edition and Campaign Codex all use.</li>
+  <li><b>Companion app</b> is how D&amp;D Beyond and others describe the character-sheet and dice side.</li>
+  <li><b>DM tools</b> or <b>GM tools</b> is what people search when they run the game.</li>
+  <li><b>Character manager</b> and <b>campaign notes</b> cover the player side and your headline feature.</li>
+</ul>
+<p class="lede" style="margin-top:18px">Descriptor candidates: <b>Campaign manager for tabletop RPGs</b> (what's shown above), <b>Campaign notes, characters and dice</b> (describes your three strengths), <b>Your campaign companion</b> (shorter and friendlier). I avoided "D&amp;D" in the descriptor, because it's a Wizards of the Coast trademark and "for D&amp;D" can read as an affiliation. Saying it in a search description is normal, but a logo lockup is more exposed.</p>
+</div></body></html>

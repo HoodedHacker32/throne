@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Name and Logo Exploration</title>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@600;800&family=Almendra:wght@700&family=UnifrakturCook:wght@700&family=Uncial+Antiqua&family=IM+Fell+English:ital@0;1&family=Metamorphous&family=New+Rocker&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#17120f;--panel:#221b16;--line:#4a3b2c;--gold:#d9a441;--red:#a82a22;--ink:#f1e6cf;--mute:#a89880}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 'Source Sans 3',sans-serif;padding:48px 16px 80px}
+.wrap{max-width:1180px;margin:0 auto}
+h1{font:800 clamp(30px,5vw,52px)/1.05 'Cinzel',serif;color:var(--gold);margin-bottom:10px}
+.lede{color:var(--mute);max-width:720px;margin-bottom:44px}
+h2{font:600 15px 'Source Sans 3';letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin:56px 0 18px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:22px}
+.wm{font-size:44px;line-height:1.1;color:var(--gold);margin-bottom:10px;min-height:54px}
+.card p{color:var(--mute);font-size:14px}.card b{color:var(--ink)}
+.tag{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:1px 8px;border-radius:3px;margin-bottom:10px}
+.logo{display:flex;align-items:center;justify-content:center;background:#0f0b09;border-radius:4px;height:200px;margin-bottom:14px}
+.logo svg{height:150px;width:auto}
+.row{display:flex;align-items:center;gap:14px;justify-content:center}
+.light{background:#efe3c8}
+.note{color:var(--mute);font-size:14px;max-width:760px;margin-top:14px}
+</style></head><body><div class="wrap">
+
+<h1>Name and logo exploration</h1>
+<p class="lede">Eight working names and six logo styles for a notes-first D&amp;D companion. None use Wizards of the Coast marks or setting names. The d20 is the one shared symbol, because it is the single shape every table recognises on sight. Everything here is a starting point for you to redraw in Affinity.</p>
+
+<h2>Name candidates</h2>
+<div class="grid">
+  <div class="card"><div class="wm" style="font-family:'Pirata One'">Inkhoard</div><p><b>A dragon's hoard, but of notes.</b> Says "collect and guard everything" and fits maps, art and lore. Strong, short, ownable.</p></div>
+  <div class="card"><div class="wm" style="font-family:'Cinzel';font-weight:800">Lorewell</div><p><b>A well you draw lore from.</b> Calm and reads well in a sidebar. Less tabletop-specific.</p></div>
+  <div class="card"><div class="wm" style="font-family:'Almendra';font-weight:700">Scribehold</div><p><b>Where the scribe keeps things.</b> Plain meaning: it holds notes. Slightly clunky to say.</p></div>
+  <div class="card"><div class="wm" style="font-family:'UnifrakturCook';font-weight:700">Tomekeep</div><p><b>Keep for your tomes.</b> Very fantasy, very clear. Risks sounding like a generic RPG tool.</p></div>
+  <div class="card"><div class="wm" style="font-family:'Uncial Antiqua'">Longrest</div><p><b>The rest between sessions.</b> A phrase every player knows, and it frames the app as what you do between games. Likely contested as a name.</p></div>
+  <div class="card"><div class="wm" style="font-family:'IM Fell English';font-style:italic">Hearthscroll</div><p><b>Tavern warmth plus a scroll.</b> Friendly and cosy, a bit long for an app icon label.</p></div>
+  <div class="card"><div class="wm" style="font-family:'Metamorphous'">Rollbook</div><p><b>Rolls and a book.</b> Literal and easy, covers dice and notes together. Also a school attendance term.</p></div>
+  <div class="card"><div class="wm" style="font-family:'New Rocker'">Wyrmledger</div><p><b>A dragon's account book.</b> Memorable and bold, with a harder edge. Hard to spell on first hearing.</p></div>
+</div>
+<p class="note">I can't check trademarks or domains from here. Before you fall for one, search the name plus "app" and "D&amp;D", and check the .app and .com domains.</p>
+
+<h2>Logo styles (shown with a placeholder wordmark)</h2>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="d20" viewBox="0 0 200 200"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path d="M100 10L178 55V145L100 190L22 145V55Z"/><path d="M100 46L150 132H50Z"/><path d="M100 10V46M22 55L100 46L178 55M22 145L50 132M178 145L150 132M50 132L100 190L150 132M22 55L50 132M178 55L150 132"/></g></symbol>
+</defs></svg>
+<div class="grid">
+
+  <div class="card"><div class="logo"><svg viewBox="0 0 200 200" style="color:#d9a441"><use href="#d20"/></svg></div><span class="tag">A</span><p><b>Plain d20.</b> The most direct signal. Needs a twist (an open face, a flame, a page fold) or it looks like every dice app.</p></div>
+
+  <div class="card"><div class="logo"><svg viewBox="0 0 200 200" style="color:#d9a441"><use href="#d20"/><path d="M40 170 C70 120 120 60 170 22 C150 70 110 120 62 156Z" fill="#a82a22" stroke="#17120f" stroke-width="5"/><path d="M40 170L62 156" stroke="#f1e6cf" stroke-width="5" stroke-linecap="round"/></svg></div><span class="tag">B</span><p><b>d20 with a quill.</b> Dice plus writing, which is exactly the product. The quill crossing the die keeps it from being a dice-roller logo.</p></div>
+
+  <div class="card"><div class="logo"><svg viewBox="0 0 200 200"><path d="M100 8 L116 20 L136 12 L146 30 L168 30 L172 52 L192 62 L184 84 L198 100 L184 116 L192 138 L172 148 L168 170 L146 170 L136 188 L116 180 L100 192 L84 180 L64 188 L54 170 L32 170 L28 148 L8 138 L16 116 L2 100 L16 84 L8 62 L28 52 L32 30 L54 30 L64 12 L84 20Z" fill="#a82a22"/><circle cx="100" cy="100" r="68" fill="none" stroke="#7a1c16" stroke-width="4"/><g style="color:#f1e6cf" transform="translate(48 48) scale(.52)"><use href="#d20" width="200" height="200"/></g></svg></div><span class="tag">C</span><p><b>Wax seal.</b> Reads as "sealed letter, campaign record". Great as an app icon and as a stamp on exports.</p></div>
+
+  <div class="card"><div class="logo"><svg viewBox="0 0 200 200"><path d="M30 40 H160 Q172 40 172 52 V168 H48 Q30 168 30 150Z" fill="#7a1c16" stroke="#d9a441" stroke-width="6" stroke-linejoin="round"/><path d="M48 168 V40" stroke="#d9a441" stroke-width="6"/><path d="M172 150 H48" stroke="#d9a441" stroke-width="4"/><g style="color:#d9a441" transform="translate(78 62) scale(.5)"><use href="#d20" width="200" height="200"/></g></svg></div><span class="tag">D</span><p><b>Tome with d20.</b> Most literal "notes plus D&amp;D". Warm and obvious, risks looking like a hundred other RPG apps.</p></div>
+
+  <div class="card"><div class="logo"><svg viewBox="0 0 200 200"><path d="M100 12 L172 36 V100 Q172 156 100 190 Q28 156 28 100 V36Z" fill="#1c1410" stroke="#d9a441" stroke-width="7" stroke-linejoin="round"/><g style="color:#d9a441" transform="translate(52 50) scale(.48)"><use href="#d20" width="200" height="200"/></g><path d="M52 140 Q100 120 148 140" fill="none" stroke="#a82a22" stroke-width="7"/></svg></div><span class="tag">E</span><p><b>Crest.</b> Heraldic, formal, scales well to a favicon. Feels like a guild or a character's coat of arms, which suits character art.</p></div>
+
+  <div class="card"><div class="logo"><div class="row"><svg viewBox="0 0 200 200" style="color:#d9a441;height:70px"><use href="#d20"/></svg><span style="font:56px 'Pirata One';color:#d9a441">Inkh<span style="color:#a82a22">o</span>ard</span></div></div><span class="tag">F</span><p><b>Wordmark first.</b> Letters carry the brand and a small d20 stands in for a letter or sits beside it. Easiest to draw cleanly in Affinity.</p></div>
+
+</div>
+
+<h2>On parchment</h2>
+<div class="grid"><div class="card light" style="grid-column:1/-1"><div class="row" style="padding:20px 0;gap:24px"><svg viewBox="0 0 200 200" style="color:#7a1c16;height:90px"><use href="#d20"/></svg><span style="font:72px 'Pirata One';color:#2b1a12">Inkhoard</span><span style="font:italic 22px 'IM Fell English';color:#5a3f2c">notes for the whole table</span></div></div></div>
+<p class="note">Tell me which names and logo styles pull you in, one or two of each. I'll tighten them: letterform sketches for the wordmark, spacing and clear-space rules, and light and dark versions, ready for you to redraw in Affinity.</p>
+</div></body></html>
