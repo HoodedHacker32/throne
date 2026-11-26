@@ -289,11 +289,14 @@ async function syncGlobal() {
   }
 }
 
+/** A fresh device's untouched starter campaign: empty (or only old untouched samples). Not worth uploading. */
 async function isPristineSample(cid: number) {
   const notes = await db.notes.where('campaignId').equals(cid).toArray()
   const chars = (await db.characters.toArray()).filter(c => c.campaignId === cid)
   const files = await db.library.where('campaignId').equals(cid).count()
-  return files === 0 && notes.length > 0 && notes.every(n => n.tags.includes('sample') && n.updatedAt === n.createdAt) &&
+  const fights = await db.combatants.where('campaignId').equals(cid).count()
+  return files === 0 && fights === 0 &&
+    notes.every(n => n.tags.includes('sample') && n.updatedAt === n.createdAt) &&
     chars.every(c => c.name.startsWith('Sample:') && c.updatedAt === c.createdAt)
 }
 async function removeLocalCampaign(cid: number) {

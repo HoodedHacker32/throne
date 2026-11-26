@@ -85,7 +85,7 @@ Click a **number** to roll it. Click a **name** to open its breakdown in the dra
 ## Content and brand
 
 - Every user-facing surface that names the product says **"Unofficial D&D Campaign Manager"**; the welcome guide adds "Not affiliated with Wizards of the Coast".
-- Bundled rules content is SRD 5.2 mechanics and numbers only, no book text. Starter tables and sample content are original and labelled sample.
+- Bundled rules content is SRD 5.2 mechanics and numbers only, no book text. Starter random tables are original. The app starts empty: no sample notes or characters.
 - No D&D Beyond or Wizards of the Coast logos, art or fonts.
 
 ## Finish review (2026-11-24)
