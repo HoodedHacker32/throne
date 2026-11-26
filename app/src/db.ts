@@ -131,54 +131,20 @@ export const blankCharacter = (over: Partial<Character> = {}): Omit<Character, '
   createdAt: Date.now(), updatedAt: Date.now(), ...over,
 })
 
-/** First-run sample content so the app is not empty. Everything here is labelled sample. */
+/** First run: one empty campaign, nothing else. People start from their own characters and notes. */
 export async function seedIfEmpty() {
-  if ((await db.campaigns.count()) > 0) return
-  const now = Date.now()
-  const campaignId = await db.campaigns.add({ name: 'Sample campaign', createdAt: now })
-  const mk = (title: string, kind: NoteKind, body: string, tags: string[] = ['sample']) =>
-    ({ campaignId, title, kind, body, tags, createdAt: now, updatedAt: now })
-  await db.notes.bulkAdd([
-    mk('Welcome to Throne', 'note',
-`# Welcome to Throne
+  if ((await db.campaigns.count()) === 0) await db.campaigns.add({ name: 'My campaign', createdAt: Date.now() })
+  await removeUntouchedSamples()
+}
 
-This is a **sample note**. Notes are plain markdown, and you link between them with double brackets, like [[Warden Vael]] or [[The Sunken Chapel]].
-
-- Switch between **Player** and **DM** with the toggle at the top.
-- Characters, NPCs, places and sessions are all notes you can link.
-- A link that points nowhere yet is dashed. Click it to create the note.
-
-> Unofficial D&D Campaign Manager. Not affiliated with Wizards of the Coast.`),
-    mk('Warden Vael', 'npc', `# Warden Vael\n\nKeeper of [[The Sunken Chapel]] gate. Lies about the tithe.\n\n**Wants:** the party out before the tide.`),
-    mk('The Sunken Chapel', 'location', `# The Sunken Chapel\n\nHalf flooded at high tide. [[Warden Vael]] holds the only key.`),
-    mk('Session 1: the tide comes in', 'session', `# Session 1\n\nThe party reached [[The Sunken Chapel]] at dusk. Ask [[Warden Vael]] about the ledger.`),
-  ])
-  await db.characters.add({
-    ...blankCharacter({
-      mode: 'guided', campaignId, name: 'Sample: Wren Ashdown', species: 'Elf', className: 'Ranger', level: 1, background: 'Criminal / Spy',
-      alignment: 'Neutral Good', abilities: { str: 10, dex: 18, con: 14, int: 17, wis: 10, cha: 16 }, saveProf: ['str', 'dex'],
-      skillProf: { acrobatics: 1, deception: 1, insight: 1, perception: 1, stealth: 1, survival: 1 },
-      hpMax: 12, hpCurrent: 12, hitDie: 10, ac: 14, speed: 35,
-      attacks: [
-        { name: 'Crossbow, Hand', bonus: '+6', damage: '1d6+4 piercing', notes: 'Light, loading', range: '30/120' },
-        { name: 'Scimitar', bonus: '+6', damage: '1d6+4 slashing', notes: 'Finesse, light', range: '5 ft.' },
-        { name: 'Unarmed Strike', bonus: '+2', damage: '1 bludgeoning', notes: '' },
-      ],
-      inventory: [
-        { name: 'Studded Leather', qty: 1, weight: 13, equipped: true }, { name: 'Crossbow, Hand', qty: 1, weight: 3, equipped: true },
-        { name: 'Scimitar', qty: 1, weight: 3, equipped: true }, { name: 'Rations', qty: 10, weight: 2, equipped: false },
-        { name: 'Torch', qty: 10, weight: 1, equipped: false },
-      ],
-      coins: { cp: 0, sp: 0, ep: 0, gp: 22, pp: 0 },
-      resources: [{ name: "Hunter's Mark", max: 2, used: 0, rest: 'long', kind: 'bonus' }],
-      features: '=== SPECIES TRAITS ===\n\n* Darkvision\nYou can see in dim light within 60 feet as if it were bright light.\n\n* Fey Ancestry\nAdvantage on saves to avoid or end the Charmed condition.\n\n=== CLASS FEATURES ===\n\n* Favored Enemy\nHunter\'s Mark is always prepared.',
-      proficiencies: 'Armor: Light, Medium, Shields\nWeapons: Simple, Martial\nTools: Thieves\' Tools\nLanguages: Common, Elvish',
-      senses: 'Darkvision 60 ft.', defenses: 'Immune to magical sleep',
-      spellAbility: 'wis', slots: [0, 2], slotsUsed: [],
-      spells: [
-        { name: 'Druidcraft', level: 0, prepared: true, time: '1 action', range: '30 ft.', components: 'V, S', duration: 'Instantaneous', source: 'Species' },
-        { name: "Hunter's Mark", level: 1, prepared: true, time: '1 bonus action', range: '90 ft.', components: 'V', duration: 'Concentration, up to 1 hour', concentration: true, hit: '1d6', source: 'Favored Enemy' },
-      ],
-    }),
+/** Older versions seeded sample notes and a sample character. Remove them once, but only if nobody has
+ *  edited them (updatedAt === createdAt); anything the user changed is kept. */
+async function removeUntouchedSamples() {
+  try { if (localStorage.getItem('throne.samplesRemoved') === '1') return } catch { /* ignore */ }
+  await db.transaction('rw', [db.campaigns, db.notes, db.characters], async () => {
+    await db.notes.filter(n => n.tags.includes('sample') && n.updatedAt === n.createdAt).delete()
+    await db.characters.filter(c => c.name.startsWith('Sample:') && c.updatedAt === c.createdAt).delete()
+    await db.campaigns.filter(c => c.name === 'Sample campaign').modify({ name: 'My campaign' })
   })
+  try { localStorage.setItem('throne.samplesRemoved', '1') } catch { /* ignore */ }
 }

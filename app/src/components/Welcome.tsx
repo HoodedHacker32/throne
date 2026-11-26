@@ -47,7 +47,7 @@ export function Welcome() {
           {ios
             ? <li><Share size={16} /><span>Add Throne to your Home Screen: tap Share, then “Add to Home Screen”. It then opens full screen and works offline.</span></li>
             : <li><Search size={16} /><span>On a keyboard, press <kbd>Ctrl K</kbd> (or <kbd>⌘K</kbd>) to jump anywhere or roll a table.</span></li>}
-          <li><Swords size={16} /><span>The sample campaign and its sample character are examples. Edit or delete them whenever you like.</span></li>
+          <li><Swords size={16} /><span>Everything starts empty: build or import a character, or write your first note.</span></li>
         </ul>
         <div className="foot"><span className="muted small">Not affiliated with Wizards of the Coast.</span><button className="btn" onClick={close}>Just look around</button></div>
       </div>
