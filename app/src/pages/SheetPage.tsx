@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { ArrowLeft, Bed, Camera, Coffee, Heart, Pencil, Plus, Search, Shield, Trash2 } from 'lucide-react'
@@ -7,7 +7,7 @@ import { ABILITIES, ABILITY_NAMES, ALIGNMENTS, CLASSES, CONDITIONS, SKILLS, SPEC
 import { abilityMod, classLine, classesOf, hitDiceLeft, initiative, passive, saveBonus, skillBonus, withClasses } from '../lib/character'
 import { check, record, rollDamage } from '../lib/roller'
 import { roll } from '../lib/dice'
-import { useMedia } from '../lib/hooks'
+import { useMedia, useOptimistic } from '../lib/hooks'
 import { toPortrait } from '../lib/image'
 import { CASTING_ABILITY, LEVEL_NAME, separatePact, shortRestSlots, slotsForClasses } from '../lib/spells'
 import { useUI } from '../state'
@@ -32,7 +32,9 @@ export function SheetPage() {
   return <Sheet key={c.id} c={c} />
 }
 
-function Sheet({ c }: { c: Character }) {
+function Sheet({ c: stored }: { c: Character }) {
+  // Edits show instantly and are written behind the scenes, so fast typing is never overwritten.
+  const [c, save] = useOptimistic(stored, useCallback((patch: Partial<Character>) => db.characters.update(stored.id, { ...patch, updatedAt: Date.now() }), [stored.id]))
   const [params, setParams] = useSearchParams()
   const editing = params.get('edit') === '1'
   const [tab, setTab] = useState<Tab>('actions')
@@ -40,7 +42,6 @@ function Sheet({ c }: { c: Character }) {
   const [detail, setDetail] = useState<Detail | null>(null)
   const phone = useMedia('(max-width: 640px)')
   const navigate = useNavigate()
-  const save: Save = (patch) => db.characters.update(c.id, { ...patch, updatedAt: Date.now() })
   const pb = profBonus(c.level)
   const sub = [c.species, classLine(c), `Level ${c.level}`].filter(Boolean).join(' · ')
   const show = (s: Section) => !phone || section === s

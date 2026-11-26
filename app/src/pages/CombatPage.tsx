@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useCallback, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { BookmarkPlus, ExternalLink, Plus, SkipForward, Trash2, UserPlus, X } from 'lucide-react'
@@ -7,7 +7,7 @@ import { db, type Character, type Combatant, type Monster } from '../db'
 import { CONDITIONS } from '../lib/rules'
 import { initiative } from '../lib/character'
 import { roll } from '../lib/dice'
-import { useCampaignId, useCharacters, useMedia } from '../lib/hooks'
+import { useCampaignId, useCharacters, useMedia, useOptimistic } from '../lib/hooks'
 import { CRS, CR_XP, budgetFor, rate } from '../lib/encounter'
 
 const order = (a: Combatant, b: Combatant) => b.initiative - a.initiative || a.name.localeCompare(b.name)
@@ -134,7 +134,8 @@ export function CombatPage() {
   )
 }
 
-function Row({ c, current, selected, onSelect, upd }: { c: Combatant; current: boolean; selected: boolean; onSelect: () => void; upd: (c: Combatant, p: Partial<Combatant>) => unknown }) {
+function Row({ c: stored, current, selected, onSelect }: { c: Combatant; current: boolean; selected: boolean; onSelect: () => void; upd: (c: Combatant, p: Partial<Combatant>) => unknown }) {
+  const [c, set] = useOptimistic(stored, useCallback((p: Partial<Combatant>) => db.combatants.update(stored.id, p), [stored.id]))
   const [amt, setAmt] = useState('')
   const [cond, setCond] = useState(false)
   const n = Math.max(0, Number(amt) || 0)
@@ -143,7 +144,7 @@ function Row({ c, current, selected, onSelect, upd }: { c: Combatant; current: b
   return (
     <li className={`ini ${current ? 'cur' : ''} ${selected ? 'sel' : ''} ${down ? 'down' : ''} ${c.isPlayer ? 'pc' : ''}`} aria-current={current ? 'step' : undefined}>
       <input className="initn tnum" inputMode="numeric" aria-label={`${c.name} initiative`} value={c.initiative}
-        onChange={e => upd(c, { initiative: Number(e.target.value) || 0 })} />
+        onChange={e => set({ initiative: Number(e.target.value) || 0 })} />
       <div className="who">
         <button className="nm row-name" onClick={onSelect}>{c.name}{c.isPlayer && <span className="kind pc-tag">PC</span>}</button>
         <div className="bar-line">
@@ -152,29 +153,30 @@ function Row({ c, current, selected, onSelect, upd }: { c: Combatant; current: b
         </div>
         <div>
           {c.conditions.map(k => (
-            <button key={k} className="cond" onClick={() => upd(c, { conditions: c.conditions.filter(x => x !== k) })} aria-label={`Remove ${k}`}>{k} <X size={10} /></button>
+            <button key={k} className="cond" onClick={() => set({ conditions: c.conditions.filter(x => x !== k) })} aria-label={`Remove ${k}`}>{k} <X size={10} /></button>
           ))}
           <button className="cond add" onClick={() => setCond(!cond)} aria-expanded={cond}>+ condition</button>
         </div>
         {cond && (
           <div className="chips cond-pick">
             {CONDITIONS.filter(k => !c.conditions.includes(k)).map(k => (
-              <button key={k} className="chip" onClick={() => { upd(c, { conditions: [...c.conditions, k] }); setCond(false) }}>{k}</button>
+              <button key={k} className="chip" onClick={() => { set({ conditions: [...c.conditions, k] }); setCond(false) }}>{k}</button>
             ))}
           </div>
         )}
       </div>
       <div className="extra hp-ctl">
-        <button className="btn sm dmg" disabled={!n} onClick={() => { upd(c, { hp: Math.max(0, c.hp - n) }); setAmt('') }}>Dmg</button>
+        <button className="btn sm dmg" disabled={!n} onClick={() => { set({ hp: Math.max(0, c.hp - n) }); setAmt('') }}>Dmg</button>
         <input className="field num-in" inputMode="numeric" placeholder="0" aria-label={`Amount for ${c.name}`} value={amt} onChange={e => setAmt(e.target.value.replace(/\D/g, ''))} />
-        <button className="btn sm heal" disabled={!n} onClick={() => { upd(c, { hp: Math.min(c.maxHp, c.hp + n) }); setAmt('') }}>Heal</button>
+        <button className="btn sm heal" disabled={!n} onClick={() => { set({ hp: Math.min(c.maxHp, c.hp + n) }); setAmt('') }}>Heal</button>
       </div>
       <button className="btn ghost sm" aria-label={`Remove ${c.name}`} onClick={() => db.combatants.delete(c.id)}><Trash2 size={16} /></button>
     </li>
   )
 }
 
-function Detail({ c, upd }: { c: Combatant; upd: (c: Combatant, p: Partial<Combatant>) => unknown }) {
+function Detail({ c: stored }: { c: Combatant; upd: (c: Combatant, p: Partial<Combatant>) => unknown }) {
+  const [c, set] = useOptimistic(stored, useCallback((p: Partial<Combatant>) => db.combatants.update(stored.id, p), [stored.id]))
   const [amt, setAmt] = useState('')
   const n = Math.max(0, Number(amt) || 0)
   const num = (label: string, v: number, set: (v: number) => void): ReactNode => (
@@ -190,21 +192,21 @@ function Detail({ c, upd }: { c: Combatant; upd: (c: Combatant, p: Partial<Comba
       <div className="hp-big tnum"><b className={c.hp <= c.maxHp / 3 ? 'low' : ''}>{c.hp}</b> / {c.maxHp}{c.tempHp ? <span className="temp"> +{c.tempHp} temp</span> : null}</div>
       <input className="field hp-amt" inputMode="numeric" placeholder="Amount" aria-label={`Amount for ${c.name}`} value={amt} onChange={e => setAmt(e.target.value.replace(/\D/g, ''))} />
       <div className="hp-btns">
-        <button className="btn heal" disabled={!n} onClick={() => { upd(c, { hp: Math.min(c.maxHp, c.hp + n) }); setAmt('') }}>Heal</button>
+        <button className="btn heal" disabled={!n} onClick={() => { set({ hp: Math.min(c.maxHp, c.hp + n) }); setAmt('') }}>Heal</button>
         <button className="btn dmg" disabled={!n} onClick={() => {
           const t = Math.min(c.tempHp ?? 0, n)
-          upd(c, { tempHp: (c.tempHp ?? 0) - t, hp: Math.max(0, c.hp - (n - t)) }); setAmt('')
+          set({ tempHp: (c.tempHp ?? 0) - t, hp: Math.max(0, c.hp - (n - t)) }); setAmt('')
         }}>Damage</button>
-        <button className="btn" disabled={!n} onClick={() => { upd(c, { tempHp: n }); setAmt('') }}>Set temp</button>
+        <button className="btn" disabled={!n} onClick={() => { set({ tempHp: n }); setAmt('') }}>Set temp</button>
       </div>
       <div className="cd-nums">
-        {num('Initiative', c.initiative, v => upd(c, { initiative: v }))}
-        {num('AC', c.ac, v => upd(c, { ac: v }))}
-        {num('Max HP', c.maxHp, v => upd(c, { maxHp: Math.max(1, v) }))}
+        {num('Initiative', c.initiative, v => set({ initiative: v }))}
+        {num('AC', c.ac, v => set({ ac: v }))}
+        {num('Max HP', c.maxHp, v => set({ maxHp: Math.max(1, v) }))}
       </div>
       {!c.isPlayer && (
         <label className="lab cd-cr">Challenge rating
-          <select className="field" value={c.cr ?? ''} onChange={e => upd(c, { cr: e.target.value || undefined })}>
+          <select className="field" value={c.cr ?? ''} onChange={e => set({ cr: e.target.value || undefined })}>
             <option value="">Not set</option>{CRS.map(x => <option key={x} value={x}>CR {x} · {CR_XP[x].toLocaleString()} XP</option>)}
           </select>
         </label>
@@ -212,11 +214,11 @@ function Detail({ c, upd }: { c: Combatant; upd: (c: Combatant, p: Partial<Comba
       <label className="lab">Conditions</label>
       <div className="chips">
         {CONDITIONS.map(k => <button key={k} className="chip" aria-pressed={c.conditions.includes(k)}
-          onClick={() => upd(c, { conditions: c.conditions.includes(k) ? c.conditions.filter(x => x !== k) : [...c.conditions, k] })}>{k}</button>)}
+          onClick={() => set({ conditions: c.conditions.includes(k) ? c.conditions.filter(x => x !== k) : [...c.conditions, k] })}>{k}</button>)}
       </div>
       {!c.isPlayer && <SaveMonster c={c} />}
       <label className="lab" htmlFor={`cn-${c.id}`}>Notes</label>
-      <textarea id={`cn-${c.id}`} className="field area" rows={4} placeholder="Tactics, resistances, loot…" value={c.notes ?? ''} onChange={e => upd(c, { notes: e.target.value })} />
+      <textarea id={`cn-${c.id}`} className="field area" rows={4} placeholder="Tactics, resistances, loot…" value={c.notes ?? ''} onChange={e => set({ notes: e.target.value })} />
     </div>
   )
 }

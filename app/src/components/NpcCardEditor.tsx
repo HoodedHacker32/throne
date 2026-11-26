@@ -2,6 +2,7 @@ import { Dices } from 'lucide-react'
 import { db, type Note, type NpcCard } from '../db'
 import { rollTable } from '../lib/tables'
 import { useTableLookup } from './TablesPanel'
+import { DraftInput } from './DraftInput'
 
 const FIELDS: { k: keyof NpcCard; label: string; table?: string; ph: string }[] = [
   { k: 'role', label: 'Role', table: 'NPC roles', ph: 'innkeeper, fence, rival…' },
@@ -25,7 +26,7 @@ export function NpcCardEditor({ note }: { note: Note }) {
           <label key={f.k} className={`npc-f ${f.k === 'secret' ? 'secret' : ''}`}>
             <span className="npc-l">{f.label}</span>
             <span className="npc-v">
-              <input className="field bare" value={card[f.k] ?? ''} placeholder={f.ph} onChange={e => set({ [f.k]: e.target.value })} />
+              <DraftInput className="field bare" value={card[f.k] ?? ''} placeholder={f.ph} onValue={v => set({ [f.k]: v })} />
               {rows !== undefined && <button type="button" className="npc-roll" title={`Roll on ${f.table}`} aria-label={`Roll ${f.label.toLowerCase()} from ${f.table}`}
                 onClick={() => set({ [f.k]: rollTable(f.table!, rows, lookup).text })}><Dices size={14} /></button>}
             </span>
