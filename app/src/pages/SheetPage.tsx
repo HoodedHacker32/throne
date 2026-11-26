@@ -14,6 +14,7 @@ import { useUI } from '../state'
 import { Portrait } from '../components/Portrait'
 import { Drawer } from '../components/Drawer'
 import { ConfirmDelete } from '../components/ConfirmDelete'
+import { DraftInput, DraftTextarea, NumberInput } from '../components/DraftInput'
 
 type Tab = 'actions' | 'spells' | 'inventory' | 'features' | 'notes'
 type Section = 'stats' | 'skills' | Tab
@@ -362,12 +363,12 @@ function ClassesEditor({ c, save }: { c: Character; save: Save }) {
       <label className="lab">Classes <span className="muted small">· total level {c.level}, proficiency {fmt(profBonus(c.level))}</span></label>
       {list.map((k, i) => (
         <div key={i} className="class-row">
-          <input className="field" list="class-list" aria-label="Class" placeholder="Class" value={k.name}
-            onChange={e => { const info = CLASSES.find(x => x.name.toLowerCase() === e.target.value.toLowerCase()); set(i, { name: e.target.value, ...(info ? { hitDie: info.hitDie } : {}) }) }} />
-          <input className="field" aria-label="Subclass" placeholder="Subclass" value={k.subclass} onChange={e => set(i, { subclass: e.target.value })} />
+          <DraftInput className="field" list="class-list" aria-label="Class" placeholder="Class" value={k.name}
+            onValue={v => { const info = CLASSES.find(x => x.name.toLowerCase() === v.toLowerCase()); set(i, { name: v, ...(info ? { hitDie: info.hitDie } : {}) }) }} />
+          <DraftInput className="field" aria-label="Subclass" placeholder="Subclass" value={k.subclass} onValue={v => set(i, { subclass: v })} />
           <label className="cr-lvl"><span className="small muted">Lvl</span>
-            <input className="field num-in" inputMode="numeric" aria-label={`${k.name || 'Class'} level`} value={k.level}
-              onChange={e => set(i, { level: Math.min(20, Math.max(1, Number(e.target.value.replace(/\D/g, '')) || 1)) })} /></label>
+            <NumberInput className="field num-in" aria-label={`${k.name || 'Class'} level`} value={k.level} min={1} max={20}
+              onNumber={n => set(i, { level: n })} /></label>
           <label className="cr-lvl"><span className="small muted">d</span>
             <select className="field" aria-label="Hit die" value={k.hitDie} onChange={e => set(i, { hitDie: Number(e.target.value) })}>
               {[6, 8, 10, 12].map(d => <option key={d} value={d}>{d}</option>)}
@@ -383,27 +384,26 @@ function ClassesEditor({ c, save }: { c: Character; save: Save }) {
 }
 
 function DetailsEditor({ c, save, onDelete }: { c: Character; save: Save; onDelete: () => void }) {
-  const num = (v: string) => Math.max(0, Math.floor(Number(v) || 0))
   const text = (k: keyof Character, label: string, list?: string[]) => (
     <div>
       <label className="lab" htmlFor={`f-${k}`}>{label}</label>
-      <input id={`f-${k}`} className="field" list={list ? `l-${k}` : undefined} value={String(c[k] ?? '')}
-        onChange={e => save({ [k]: e.target.value } as Partial<Character>)} />
+      <DraftInput id={`f-${k}`} className="field" list={list ? `l-${k}` : undefined} value={String(c[k] ?? '')}
+        onValue={v => save({ [k]: v } as Partial<Character>)} />
       {list && <datalist id={`l-${k}`}>{list.map(x => <option key={x} value={x} />)}</datalist>}
     </div>
   )
   const number = (k: keyof Character, label: string) => (
     <div>
       <label className="lab" htmlFor={`f-${k}`}>{label}</label>
-      <input id={`f-${k}`} className="field" inputMode="numeric" value={String(c[k] ?? 0)}
-        onChange={e => save({ [k]: num(e.target.value) } as Partial<Character>)} />
+      <NumberInput id={`f-${k}`} className="field" value={Number(c[k] ?? 0)} min={0}
+        onNumber={n => save({ [k]: n } as Partial<Character>)} />
     </div>
   )
   const area = (k: 'proficiencies' | 'senses' | 'defenses', label: string, hint: string) => (
     <div>
       <label className="lab" htmlFor={`f-${k}`}>{label}</label>
-      <textarea id={`f-${k}`} className="field area" rows={k === 'proficiencies' ? 4 : 2} placeholder={hint} value={c[k] ?? ''}
-        onChange={e => save({ [k]: e.target.value })} />
+      <DraftTextarea id={`f-${k}`} className="field area" rows={k === 'proficiencies' ? 4 : 2} placeholder={hint} value={c[k] ?? ''}
+        onValue={v => save({ [k]: v })} />
     </div>
   )
   return (
@@ -420,8 +420,8 @@ function DetailsEditor({ c, save, onDelete }: { c: Character; save: Save; onDele
         {number('speed', 'Speed (ft.)')}
         <div>
           <label className="lab" htmlFor="f-init">Initiative bonus</label>
-          <input id="f-init" className="field" inputMode="numeric" value={c.initiativeBonus}
-            onChange={e => save({ initiativeBonus: Math.floor(Number(e.target.value) || 0) })} />
+          <NumberInput id="f-init" className="field" value={c.initiativeBonus} min={-10} max={30}
+            onNumber={n => save({ initiativeBonus: n })} />
         </div>
       </div>
       <ClassesEditor c={c} save={save} />
@@ -430,8 +430,8 @@ function DetailsEditor({ c, save, onDelete }: { c: Character; save: Save; onDele
         {ABILITIES.map((a: Ability) => (
           <div key={a} className="score">
             <label className="lab" htmlFor={`ab-${a}`} style={{ margin: 0 }}>{a}</label>
-            <input id={`ab-${a}`} inputMode="numeric" value={c.abilities[a]}
-              onChange={e => save({ abilities: { ...c.abilities, [a]: Math.min(30, num(e.target.value)) } })} />
+            <NumberInput id={`ab-${a}`} value={c.abilities[a]} min={1} max={30}
+              onNumber={n => save({ abilities: { ...c.abilities, [a]: n } })} />
             <span className="m">{fmt(mod(c.abilities[a]))}</span>
             <label className="check"><input type="checkbox" checked={c.saveProf.includes(a)}
               onChange={e => save({ saveProf: e.target.checked ? [...c.saveProf, a] : c.saveProf.filter(x => x !== a) })} /> Save</label>
@@ -512,7 +512,7 @@ function Resources({ c, save }: { c: Character; save: Save }) {
       {c.resources.length === 0 && <p className="muted small">Spell slots, rages, channel divinity: anything with charges.</p>}
       {c.resources.map((r, i) => (
         <div key={i} className="res-row">
-          {edit ? <input className="field grow" aria-label="Resource name" value={r.name} onChange={e => setRes(i, { name: e.target.value })} />
+          {edit ? <DraftInput className="field grow" aria-label="Resource name" value={r.name} onValue={v => setRes(i, { name: v })} />
             : <span className="grow"><b>{r.name}</b> <small className="muted">· {r.rest} rest</small></span>}
           <div className="pips" role="group" aria-label={`${r.name}: ${r.max - r.used} of ${r.max} left`}>
             {Array.from({ length: r.max }, (_, k) => (
@@ -521,8 +521,8 @@ function Resources({ c, save }: { c: Character; save: Save }) {
             ))}
           </div>
           {edit && <>
-            <input className="field num-in" inputMode="numeric" aria-label="Maximum uses" value={r.max}
-              onChange={e => setRes(i, { max: Math.min(20, Math.max(0, Math.floor(Number(e.target.value) || 0))), used: 0 })} />
+            <NumberInput className="field num-in" aria-label="Maximum uses" value={r.max} min={0} max={20}
+              onNumber={n => setRes(i, { max: n, used: Math.min(r.used, n) })} />
             <select className="field" style={{ width: 'auto' }} aria-label="Recharges on" value={r.rest} onChange={e => setRes(i, { rest: e.target.value as 'short' | 'long' })}>
               <option value="short">Short rest</option><option value="long">Long rest</option>
             </select>
@@ -655,8 +655,8 @@ function Inventory({ c, save, open }: { c: Character; save: Save; open: (i: numb
       <div className="coins">
         {(['cp', 'sp', 'ep', 'gp', 'pp'] as const).map(k => (
           <label key={k} className="coin"><span>{k}</span>
-            <input className="field tnum" inputMode="numeric" value={c.coins[k]}
-              onChange={e => save({ coins: { ...c.coins, [k]: Math.max(0, Math.floor(Number(e.target.value) || 0)) } })} /></label>
+            <NumberInput className="field tnum" value={c.coins[k]} min={0}
+              onNumber={n => save({ coins: { ...c.coins, [k]: n } })} /></label>
         ))}
       </div>
       <div className="search-row">
@@ -717,8 +717,8 @@ function Features({ c, save }: { c: Character; save: Save }) {
       </div>
       {edit ? (
         <>
-          <textarea className="field area mono" rows={16} value={c.features} aria-label="Features and traits"
-            onChange={e => save({ features: e.target.value })} />
+          <DraftTextarea className="field area mono" rows={16} value={c.features} aria-label="Features and traits"
+            onValue={v => save({ features: v })} />
           <p className="muted small">Use <code>=== Heading ===</code> for groups and <code>* Name</code> to start each feature.</p>
         </>
       ) : sections.length === 0 ? <p className="muted">No features yet. Use Edit to add class features, species traits and feats.</p> : (
@@ -752,7 +752,7 @@ function CharacterNotes({ c, save }: { c: Character; save: Save }) {
   }
   const area = (k: 'traits' | 'ideals' | 'bonds' | 'flaws' | 'backstory', label: string, rows = 3) => (
     <div><label className="lab" htmlFor={`n-${k}`}>{label}</label>
-      <textarea id={`n-${k}`} className="field area" rows={rows} value={c[k]} onChange={e => save({ [k]: e.target.value })} /></div>
+      <DraftTextarea id={`n-${k}`} className="field area" rows={rows} value={c[k]} onValue={v => save({ [k]: v })} /></div>
   )
   return (
     <>
@@ -787,8 +787,8 @@ function DetailPanel({ c, d, save, onClose }: { c: Character; d: Detail; save: S
         </div>
         <table className="calc">
           <tbody>
-            <tr><th>Score</th><td><input className="field num-in" inputMode="numeric" aria-label="Score" value={c.abilities[a]}
-              onChange={e => save({ abilities: { ...c.abilities, [a]: Math.min(30, Math.max(1, Number(e.target.value.replace(/\D/g, '')) || 1)) } })} /></td></tr>
+            <tr><th>Score</th><td><NumberInput className="field num-in" aria-label="Score" value={c.abilities[a]} min={1} max={30}
+              onNumber={n => save({ abilities: { ...c.abilities, [a]: n } })} /></td></tr>
             <tr><th>Modifier</th><td className="tnum">{fmt(m)}</td></tr>
             <tr><th>Saving throw</th><td><label className="check"><input type="checkbox" checked={prof}
               onChange={e => save({ saveProf: e.target.checked ? [...c.saveProf, a] : c.saveProf.filter(x => x !== a) })} /> Proficient {prof && `(+${pb})`}</label></td></tr>
@@ -842,8 +842,8 @@ function DetailPanel({ c, d, save, onClose }: { c: Character; d: Detail; save: S
           ))}
         </div>
         <label className="lab" htmlFor="def">Defenses</label>
-        <textarea id="def" className="field area" rows={3} value={c.defenses ?? ''} placeholder="Resistances, immunities, save modifiers"
-          onChange={e => save({ defenses: e.target.value })} />
+        <DraftTextarea id="def" className="field area" rows={3} value={c.defenses ?? ''} placeholder="Resistances, immunities, save modifiers"
+          onValue={v => save({ defenses: v })} />
       </Drawer>
     )
   }
@@ -857,17 +857,17 @@ function DetailPanel({ c, d, save, onClose }: { c: Character; d: Detail; save: S
           <button className="btn primary" onClick={() => check(`${a.name} to hit`, parseInt(a.bonus) || 0, c.name)}>To hit {a.bonus}</button>
           <button className="btn" onClick={() => rollDamage(`${a.name} damage`, a.damage, c.name)}>Damage {a.damage}</button>
         </div>
-        <label className="lab" htmlFor="at-n">Name</label><input id="at-n" className="field" value={a.name} onChange={e => set({ name: e.target.value })} />
+        <label className="lab" htmlFor="at-n">Name</label><DraftInput id="at-n" className="field" value={a.name} onValue={v => set({ name: v })} />
         <div className="form-grid two">
           <div><label className="lab" htmlFor="at-k">Type</label>
             <select id="at-k" className="field" value={a.kind ?? 'action'} onChange={e => set({ kind: e.target.value as ActionKind })}>
               <option value="action">Action</option><option value="bonus">Bonus action</option><option value="reaction">Reaction</option><option value="other">Other</option>
             </select></div>
-          <div><label className="lab" htmlFor="at-r">Range</label><input id="at-r" className="field" placeholder="5 ft. or 30/120" value={a.range ?? ''} onChange={e => set({ range: e.target.value })} /></div>
-          <div><label className="lab" htmlFor="at-b">To hit / DC</label><input id="at-b" className="field" placeholder="+5" value={a.bonus} onChange={e => set({ bonus: e.target.value })} /></div>
-          <div><label className="lab" htmlFor="at-d">Damage</label><input id="at-d" className="field" placeholder="1d8+3 slashing" value={a.damage} onChange={e => set({ damage: e.target.value })} /></div>
+          <div><label className="lab" htmlFor="at-r">Range</label><DraftInput id="at-r" className="field" placeholder="5 ft. or 30/120" value={a.range ?? ''} onValue={v => set({ range: v })} /></div>
+          <div><label className="lab" htmlFor="at-b">To hit / DC</label><DraftInput id="at-b" className="field" placeholder="+5" value={a.bonus} onValue={v => set({ bonus: v })} /></div>
+          <div><label className="lab" htmlFor="at-d">Damage</label><DraftInput id="at-d" className="field" placeholder="1d8+3 slashing" value={a.damage} onValue={v => set({ damage: v })} /></div>
         </div>
-        <label className="lab" htmlFor="at-no">Notes</label><textarea id="at-no" className="field area" rows={3} value={a.notes} onChange={e => set({ notes: e.target.value })} />
+        <label className="lab" htmlFor="at-no">Notes</label><DraftTextarea id="at-no" className="field area" rows={3} value={a.notes} onValue={v => set({ notes: v })} />
         <div className="foot"><span /><button className="btn ghost" onClick={() => { save({ attacks: c.attacks.filter((_, j) => j !== d.i) }); onClose() }}><Trash2 size={16} /> Remove</button></div>
       </Drawer>
     )
@@ -877,11 +877,11 @@ function DetailPanel({ c, d, save, onClose }: { c: Character; d: Detail; save: S
     if (!sp) return null
     const set = (patch: Partial<Spell>) => save({ spells: (c.spells ?? []).map((x, j) => j === d.i ? { ...x, ...patch } : x) })
     const txt = (k: 'time' | 'range' | 'components' | 'duration' | 'hit' | 'source', label: string, ph: string) => (
-      <div><label className="lab" htmlFor={`sp-${k}`}>{label}</label><input id={`sp-${k}`} className="field" placeholder={ph} value={sp[k] ?? ''} onChange={e => set({ [k]: e.target.value })} /></div>
+      <div><label className="lab" htmlFor={`sp-${k}`}>{label}</label><DraftInput id={`sp-${k}`} className="field" placeholder={ph} value={sp[k] ?? ''} onValue={v => set({ [k]: v })} /></div>
     )
     return (
       <Drawer title={sp.name || 'Spell'} onClose={onClose}>
-        <label className="lab" htmlFor="sp-n">Name</label><input id="sp-n" className="field" value={sp.name} onChange={e => set({ name: e.target.value })} />
+        <label className="lab" htmlFor="sp-n">Name</label><DraftInput id="sp-n" className="field" value={sp.name} onValue={v => set({ name: v })} />
         <div className="form-grid two">
           <div><label className="lab" htmlFor="sp-l">Level</label>
             <select id="sp-l" className="field" value={sp.level} onChange={e => set({ level: Number(e.target.value) })}>
@@ -899,7 +899,7 @@ function DetailPanel({ c, d, save, onClose }: { c: Character; d: Detail; save: S
           <label className="check"><input type="checkbox" checked={!!sp.ritual} onChange={e => set({ ritual: e.target.checked })} /> Ritual</label>
         </div>
         {txt('source', 'Source', 'Class, feat or item')}
-        <label className="lab" htmlFor="sp-no">Notes</label><textarea id="sp-no" className="field area" rows={4} value={sp.notes ?? ''} onChange={e => set({ notes: e.target.value })} placeholder="Your own summary of what it does" />
+        <label className="lab" htmlFor="sp-no">Notes</label><DraftTextarea id="sp-no" className="field area" rows={4} value={sp.notes ?? ''} onValue={v => set({ notes: v })} placeholder="Your own summary of what it does" />
         <div className="foot"><span /><button className="btn ghost" onClick={() => { save({ spells: (c.spells ?? []).filter((_, j) => j !== d.i) }); onClose() }}><Trash2 size={16} /> Remove</button></div>
       </Drawer>
     )
@@ -909,7 +909,7 @@ function DetailPanel({ c, d, save, onClose }: { c: Character; d: Detail; save: S
   const set = (patch: Partial<Item>) => save({ inventory: c.inventory.map((x, j) => j === d.i ? { ...x, ...patch } : x) })
   return (
     <Drawer title={it.name || 'Item'} onClose={onClose}>
-      <label className="lab" htmlFor="it-n">Name</label><input id="it-n" className="field" value={it.name} onChange={e => set({ name: e.target.value })} />
+      <label className="lab" htmlFor="it-n">Name</label><DraftInput id="it-n" className="field" value={it.name} onValue={v => set({ name: v })} />
       <div className="form-grid two">
         <div><label className="lab">Quantity</label>
           <div className="stepper">
@@ -917,11 +917,11 @@ function DetailPanel({ c, d, save, onClose }: { c: Character; d: Detail; save: S
             <b className="tnum">{it.qty}</b>
             <button className="btn sm" aria-label="One more" onClick={() => set({ qty: it.qty + 1 })}>+</button>
           </div></div>
-        <div><label className="lab" htmlFor="it-w">Weight each (lb.)</label><input id="it-w" className="field" inputMode="decimal" value={it.weight}
-          onChange={e => set({ weight: Math.max(0, Number(e.target.value) || 0) })} /></div>
+        <div><label className="lab" htmlFor="it-w">Weight each (lb.)</label><NumberInput id="it-w" className="field" decimal value={it.weight} min={0}
+          onNumber={n => set({ weight: n })} /></div>
       </div>
       <label className="check" style={{ marginTop: 12 }}><input type="checkbox" checked={it.equipped} onChange={e => set({ equipped: e.target.checked })} /> Equipped / in use</label>
-      <label className="lab" htmlFor="it-no">Notes</label><textarea id="it-no" className="field area" rows={3} value={it.notes ?? ''} onChange={e => set({ notes: e.target.value })} />
+      <label className="lab" htmlFor="it-no">Notes</label><DraftTextarea id="it-no" className="field area" rows={3} value={it.notes ?? ''} onValue={v => set({ notes: v })} />
       <div className="foot"><span /><button className="btn ghost" onClick={() => { save({ inventory: c.inventory.filter((_, j) => j !== d.i) }); onClose() }}><Trash2 size={16} /> Remove</button></div>
     </Drawer>
   )
@@ -966,8 +966,8 @@ function HpDetail({ c, save, onClose }: { c: Character; save: Save; onClose: () 
       </div>
       <table className="calc">
         <tbody>
-          <tr><th>Max HP</th><td><input className="field num-in" inputMode="numeric" aria-label="Max HP" value={c.hpMax}
-            onChange={e => save({ hpMax: Math.max(1, Number(e.target.value.replace(/\D/g, '')) || 1) })} /></td></tr>
+          <tr><th>Max HP</th><td><NumberInput className="field num-in" aria-label="Max HP" value={c.hpMax} min={1}
+            onNumber={n => save({ hpMax: n })} /></td></tr>
           <tr><th>Hit dice</th><td className="tnum">{classesOf(c).map(k => `${k.level - k.used}/${k.level} d${k.hitDie}`).join(', ')}</td></tr>
         </tbody>
       </table>

@@ -6,6 +6,7 @@ import { embedKey, extractEmbeds, extractLinks, renderMarkdown } from '../lib/ma
 import { shrinkImage } from '../lib/image'
 import { ArrowLeft, ChevronDown, ChevronRight, Folder, FolderOpen, ImagePlus, Plus, Trash2 } from 'lucide-react'
 import { useCharacters } from '../lib/hooks'
+import { DraftInput } from '../components/DraftInput'
 import { NpcCardEditor } from '../components/NpcCardEditor'
 
 const KINDS: NoteKind[] = ['note', 'character', 'npc', 'location', 'session']
@@ -133,7 +134,25 @@ function Editor(props: {
   const { note, notes, titles, view, setView } = props
   const chars = useCharacters()
   const [title, setTitle] = useState(note.title)
-  const [body, setBody] = useState(note.body)
+  // The textarea is uncontrolled so typing never waits on React: the text lives in the DOM (and bodyRef), and the
+  // preview, links and save follow a moment later.
+  const [body, setBodyState] = useState(note.body)
+  const bodyRef = useRef(note.body), titleRef = useRef(note.title)
+  const bodyTimer = useRef<number | undefined>(undefined)
+  const setBody = (v: string) => { bodyRef.current = v; if (src.current && src.current.value !== v) src.current.value = v; window.clearTimeout(bodyTimer.current); setBodyState(v) }
+  const typed = (v: string) => { bodyRef.current = v; window.clearTimeout(bodyTimer.current); bodyTimer.current = window.setTimeout(() => setBodyState(v), 200) }
+  // Save whatever is unsaved when leaving the note or hiding the app.
+  const stored = useRef(note); stored.current = note
+  useEffect(() => {
+    const flush = () => {
+      const n = stored.current
+      if (bodyRef.current !== n.body || titleRef.current !== n.title)
+        db.notes.update(n.id, { title: titleRef.current, body: bodyRef.current, updatedAt: Date.now() })
+    }
+    const onHide = () => { if (document.visibilityState === 'hidden') flush() }
+    window.addEventListener('pagehide', flush); document.addEventListener('visibilitychange', onHide)
+    return () => { window.removeEventListener('pagehide', flush); document.removeEventListener('visibilitychange', onHide); flush() }
+  }, [note.id])
   const [folder, setFolder] = useState(note.folder ?? '')
   const folders = useMemo(() => [...new Set(notes.map(n => (n.folder ?? '').trim()).filter(Boolean))].sort(), [notes])
   useEffect(() => {
@@ -162,7 +181,7 @@ function Editor(props: {
     return () => window.clearTimeout(saveTimer.current)
   }, [title, body, note.id, note.title, note.body])
 
-  const html = useMemo(() => renderMarkdown(body, t => titles.has(t.toLowerCase())), [body, titles])
+  const html = useMemo(() => view === 'edit' ? '' : renderMarkdown(body, t => titles.has(t.toLowerCase())), [body, titles, view])
 
   const backlinks = useMemo(
     () => notes.filter(n => n.id !== note.id &&
@@ -199,8 +218,9 @@ function Editor(props: {
     }
     const text = names.map(n => `![[${n}]]`).join('\n')
     const el = src.current
-    const start = el?.selectionStart ?? body.length, end = el?.selectionEnd ?? body.length
-    const before = body.slice(0, start), after = body.slice(end)
+    const cur = bodyRef.current
+    const start = el?.selectionStart ?? cur.length, end = el?.selectionEnd ?? cur.length
+    const before = cur.slice(0, start), after = cur.slice(end)
     const pad = before && !before.endsWith('\n') ? '\n' : ''
     setBody(`${before}${pad}${text}\n${after}`)
     if (view === 'read') setView('split')
@@ -227,13 +247,13 @@ function Editor(props: {
       <section className="note-editor">
         <div className="note-bar">
           <button className="btn ghost sm" onClick={props.onClose} aria-label="Back to list"><ArrowLeft size={16} /></button>
-          <input className="title-input" value={title} onChange={e => setTitle(e.target.value)} aria-label="Note title" />
+          <DraftInput className="title-input" value={title} delay={250} onInput={e => { titleRef.current = e.currentTarget.value }} onValue={setTitle} aria-label="Note title" />
           <select className="field" style={{ width: 'auto' }} value={note.kind} aria-label="Note type"
             onChange={e => db.notes.update(note.id, { kind: e.target.value as NoteKind })}>
             {KINDS.map(k => <option key={k} value={k}>{k}</option>)}
           </select>
-          <input className="field folder-in" list="folder-list" placeholder="Folder" aria-label="Folder" value={folder}
-            onChange={e => setFolder(e.target.value)} />
+          <DraftInput className="field folder-in" list="folder-list" placeholder="Folder" aria-label="Folder" value={folder}
+            onValue={setFolder} />
           <datalist id="folder-list">{folders.map(f => <option key={f} value={f} />)}</datalist>
           <select className="field" style={{ width: 'auto' }} value={note.characterId ?? ''} aria-label="Linked character"
             onChange={e => db.notes.update(note.id, { characterId: e.target.value ? Number(e.target.value) : undefined })}>
@@ -255,7 +275,8 @@ function Editor(props: {
           onDragLeave={() => setDragging(false)}
           onDrop={e => { if (e.dataTransfer.files.length) { e.preventDefault(); setDragging(false); addImages([...e.dataTransfer.files]) } }}>
           {view !== 'read' && (
-            <textarea ref={src} className="md-source" value={body} onChange={e => setBody(e.target.value)}
+            <textarea ref={src} className="md-source" defaultValue={bodyRef.current} onInput={e => typed(e.currentTarget.value)}
+              onBlur={e => setBody(e.currentTarget.value)}
               onPaste={e => { const files = [...e.clipboardData.files]; if (files.some(f => f.type.startsWith('image/'))) { e.preventDefault(); addImages(files) } }}
               spellCheck aria-label="Markdown source" placeholder="Write in markdown. [[Links]] to other notes, paste or drop images." />
           )}

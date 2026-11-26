@@ -4,6 +4,7 @@ import { useLiveQuery } from 'dexie-react-hooks'
 import { ArrowLeft, Eraser, ExternalLink, Hand, MapPin as PinIcon, Maximize, Minus, Pencil, Plus, Trash2, Undo2 } from 'lucide-react'
 import { db, type LibraryItem, type MapPin, type MapStroke, type Note } from '../db'
 import { Drawer } from '../components/Drawer'
+import { DraftInput } from '../components/DraftInput'
 import { useMedia, useOptimistic } from '../lib/hooks'
 
 type Tool = 'pan' | 'pin' | 'draw' | 'erase'
@@ -145,7 +146,7 @@ function MapView({ item }: { item: LibraryItem }) {
     <div className={`map-page tool-${tool}`}>
       <div className="map-bar">
         <Link to="/dm/library" className="btn ghost sm" aria-label="Back to library"><ArrowLeft size={16} /></Link>
-        <input className="title-input map-title" value={it.name} aria-label="Map name" onChange={e => write({ name: e.target.value })} />
+        <DraftInput className="title-input map-title" value={it.name} aria-label="Map name" onValue={v => write({ name: v })} />
         <div className="seg" role="group" aria-label="Tool">
           {([['pan', Hand, 'Move'], ['pin', PinIcon, 'Pin'], ['draw', Pencil, 'Draw'], ['erase', Eraser, 'Erase']] as const).map(([t, Icon, l]) => (
             <button key={t} aria-pressed={tool === t} onClick={() => setTool(t)} title={l}><Icon size={14} /> <span className="hide-s">{l}</span></button>
@@ -225,7 +226,7 @@ function PinPanel({ pin, notes, set, remove, newNote }: {
   return (
     <div className="pin-panel">
       <label className="lab" htmlFor="pin-l">Label</label>
-      <input id="pin-l" className="field" value={pin.label} onChange={e => set({ label: e.target.value })} />
+      <DraftInput key={pin.id} id="pin-l" className="field" value={pin.label} onValue={v => set({ label: v })} />
       <label className="lab">Colour</label>
       <div className="swatches">
         {COLORS.map(c => <button key={c} className="swatch" style={{ background: c }} aria-pressed={(pin.color ?? COLORS[0]) === c} aria-label={`Colour ${c}`} onClick={() => set({ color: c })} />)}
