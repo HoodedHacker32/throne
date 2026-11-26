@@ -63,6 +63,7 @@ The app compiles, builds and runs. All screens exist and were checked in a brows
 
 - App status (`components/AppStatus.tsx`): PWA uses `registerType: 'prompt'`; an "Update ready" toast with Refresh appears when a new version is installed (checks every 20 min and when the app returns to the front). An offline bar shows under the top bar while offline.
 - Builder v3 (`pages/BuilderPage.tsx`, data in `lib/origins.ts`, SRD 5.2 only): steps Class, Background, Species, Abilities, Equipment, Finish. Pick from tiles, then the choice becomes a card with Change plus its follow-up choices (class skills from the class list, background +2/+1 limited to its three abilities, Human extra skill). SRD backgrounds Acolyte/Criminal/Sage/Soldier plus Custom. "Suggest for a <class>" assigns scores. Sticky Back/Next on phones; draft key `throne.builderDraft` (v: 3).
+- Printable sheet / PDF (`pages/PrintPage.tsx`, route `/characters/:id/print`, rendered outside the app shell by `Root` in `App.tsx`; PDF button in the sheet header). Three pages in Throne's own style: page 1 standard sheet (header, stat row, saves/senses/proficiencies, skills, init/AC/hit dice, defenses, death saves, actions, limited use), page 2 features (2 columns), equipment, coins, personality, backstory, page 3 spells (only if the character casts). A4/Letter, optional current HP/used slots (blank by default for paper play). The browser print engine makes the PDF (vector text). `parseFeatures` now lives in `lib/character.ts`.
 
 Next ideas: handout sharing, Impeccable CLI review once `buildPath` is decided.
 

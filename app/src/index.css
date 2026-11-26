@@ -1083,3 +1083,150 @@ body:has(.b3) .dock { display: none; }
   .b3-head { gap: 8px; }
   .b3-head h1 { text-align: center; }
 }
+
+/* ---------- Printable character sheet (pages/PrintPage.tsx) ---------- */
+.print-shell { position: fixed; inset: 0; overflow: auto; background: #5b5750; color: #1d1a17; z-index: 1; }
+.print-bar { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 10px 16px; padding-top: max(10px, env(safe-area-inset-top));
+  background: var(--chrome); color: var(--chrome-text); border-bottom: 2px solid var(--red); }
+.print-bar .pb-title { font: 700 15px var(--font-head); text-transform: uppercase; letter-spacing: .06em; margin-right: auto; }
+.print-bar .seg { border-color: var(--chrome-3); }
+.print-bar .seg button { color: var(--chrome-dim); }
+.print-bar .seg button[aria-pressed='true'] { color: #fff; }
+.print-bar .check { color: var(--chrome-text); font-size: 13px; display: inline-flex; gap: 6px; align-items: center; }
+.print-bar .btn.ghost { color: var(--chrome-text); }
+.print-bar .pb-hint { flex-basis: 100%; margin: 0; color: var(--chrome-dim); }
+.print-pages { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 18px 8px 40px; }
+
+.ps-page { --ink: #1d1a17; --ink2: #5d5446; --rule: #4a4238; --soft: #f6f1e5; --red: #ba0000;
+  width: 210mm; height: 297mm; padding: 9mm 9mm 7mm; box-sizing: border-box; background: #fff; color: var(--ink);
+  display: flex; flex-direction: column; gap: 2.6mm; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,.35);
+  font: 8.4pt/1.32 var(--font-ui); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.paper-letter .ps-page { width: 215.9mm; height: 279.4mm; }
+.ps-page h1, .ps-page h3, .ps-page h4, .ps-page h5, .ps-page p, .ps-page dl, .ps-page dd, .ps-page ul { margin: 0; }
+.ps-num { font-family: var(--font-num); font-weight: 400; line-height: 1; }
+
+/* Header */
+.ps-head { display: flex; align-items: stretch; gap: 4mm; border: 0.9pt solid var(--rule); border-radius: 2.2mm; padding: 2.4mm 3mm; background: var(--soft); position: relative; }
+.ps-head::after { content: ''; position: absolute; left: 3mm; right: 3mm; bottom: -0.9pt; height: 1.4pt; background: var(--red); }
+.ps-portrait { width: 22mm; height: 22mm; flex: none; border-radius: 50%; border: 1.2pt solid var(--rule); overflow: hidden; display: flex; align-items: center; justify-content: center; background: #e9e1cf; }
+.ps-portrait img { width: 100%; height: 100%; object-fit: cover; }
+.ps-portrait span { font: 400 16pt var(--font-name); color: var(--ink2); }
+.ps-name { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 1.4mm; }
+.ps-name h1 { font: 400 21pt/1.05 var(--font-name); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ps-name dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1mm 4mm; }
+.ps-name dl > div { border-bottom: 0.5pt solid #b9ae98; }
+.ps-name dd { font-size: 9pt; min-height: 1.3em; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.ps-name dt, .ps-page h4, .ps-label, .ps-sub { font: 700 6.2pt var(--font-head); text-transform: uppercase; letter-spacing: .09em; color: var(--ink2); }
+.ps-head.slim { align-items: baseline; padding: 2mm 3mm; }
+.ps-head.slim h1 { font: 400 15pt var(--font-name); }
+.ps-head.slim span { color: var(--ink2); font-size: 8.5pt; }
+
+/* Frames */
+.ps-frame { border: 0.8pt solid var(--rule); border-radius: 2mm; padding: 2mm 2.4mm 4.6mm; position: relative; min-height: 0; }
+.ps-frame .ps-label { position: absolute; left: 0; right: 0; bottom: 1.1mm; text-align: center; color: var(--red); }
+.ps-frame.grow { flex: 1; overflow: hidden; }
+.ps-sub { color: var(--red); margin: 1.4mm 0 0.6mm; }
+.ps-text { font-size: 8pt; white-space: pre-line; margin-top: .6mm; }
+.ps-lines { height: 18mm; background: repeating-linear-gradient(transparent 0 4.6mm, #cfc6b2 4.6mm 4.9mm); }
+.ps-lines.short { height: 10mm; } .ps-lines.tall { height: 100%; min-height: 60mm; }
+
+/* Stat row */
+.ps-stats { display: grid; grid-template-columns: repeat(6, 1fr) 0.85fr 0.85fr 0.85fr 2.5fr; gap: 1.6mm; }
+.ps-ability, .ps-small, .ps-hp { border: 0.9pt solid var(--rule); border-radius: 2mm; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 1.4mm 1mm 0; text-align: center; background: #fff; }
+.ps-ability h4 { font-size: 5.6pt; letter-spacing: .06em; }
+.ps-ability .ps-num { font-size: 20pt; margin: 0.8mm 0 0.6mm; }
+.ps-score { margin-bottom: -2.6mm; background: #fff; border: 0.9pt solid var(--rule); border-radius: 3mm; min-width: 9mm; padding: 0.2mm 1.4mm; font: 700 8.5pt var(--font-head); }
+.ps-ability { margin-bottom: 2.6mm; }
+.ps-small { padding: 1.6mm 1mm 1.2mm; gap: 0.8mm; }
+.ps-small .ps-num { font-size: 16pt; }
+.ps-small .ps-num small { font: 700 6pt var(--font-head); margin-left: .3mm; }
+.ps-small h4 { font-size: 5.4pt; line-height: 1.15; }
+.ps-insp { width: 7mm; height: 7mm; border: 0.9pt solid var(--rule); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--red); font-size: 10pt; }
+.ps-hp { padding: 1.2mm 1.4mm 1mm; }
+.ps-hp-row { display: grid; grid-template-columns: 1.3fr 1fr 1fr; width: 100%; flex: 1; }
+.ps-hp-row > div { display: flex; flex-direction: column; align-items: center; gap: .6mm; }
+.ps-hp-row > div + div { border-left: 0.5pt solid #b9ae98; }
+.ps-hp-row .ps-num { font-size: 18pt; min-height: 9mm; }
+.ps-hp-l { color: var(--red) !important; }
+
+/* Columns */
+.ps-cols { flex: 1; min-height: 0; display: grid; grid-template-columns: 0.92fr 1fr 1.55fr; gap: 2.4mm; margin-top: 1mm; }
+.ps-col { display: flex; flex-direction: column; gap: 2.4mm; min-height: 0; }
+.ps-list { list-style: none; padding: 0; display: grid; gap: .55mm; }
+.ps-list li { display: flex; align-items: center; gap: 1.6mm; font-size: 8.3pt; }
+.ps-list li b { min-width: 6mm; text-align: right; font: 700 8.6pt var(--font-head); }
+.ps-dot { width: 2.6mm; height: 2.6mm; flex: none; border: 0.8pt solid var(--rule); border-radius: 50%; display: inline-block; box-sizing: border-box; }
+.ps-dot.on { background: var(--ink); }
+.ps-dot.exp { background: var(--ink); box-shadow: 0 0 0 0.6mm #fff, 0 0 0 0.9mm var(--ink); }
+.ps-skills { width: 100%; border-collapse: collapse; }
+.ps-skills td { padding: .52mm .6mm; font-size: 8.2pt; border-bottom: 0.4pt solid #ddd4c2; }
+.ps-skills td.ab { font: 700 6pt var(--font-head); text-transform: uppercase; color: var(--ink2); }
+.ps-skills td.n, .ps-table td.n { text-align: right; font: 700 8.6pt var(--font-head); }
+.ps-trio { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 1.6mm; }
+.ps-trio .ps-dice { font-size: 12pt; }
+.ps-ac { border-radius: 2mm 2mm 45% 45% / 2mm 2mm 30% 30%; }
+.ps-pair { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.6mm; }
+.ps-death { display: flex; justify-content: space-between; align-items: center; font-size: 7pt; margin: .5mm 0; }
+.ps-boxes { display: inline-flex; gap: .9mm; flex-wrap: wrap; }
+.ps-box { width: 2.9mm; height: 2.9mm; border: 0.8pt solid var(--rule); border-radius: 50%; box-sizing: border-box; }
+.ps-box.x { background: var(--ink); }
+.ps-table { width: 100%; border-collapse: collapse; }
+.ps-table th { text-align: left; font: 700 5.8pt var(--font-head); text-transform: uppercase; letter-spacing: .07em; color: var(--ink2); border-bottom: 0.8pt solid var(--rule); padding: .4mm .8mm; }
+.ps-table td { padding: .7mm .8mm; font-size: 8pt; border-bottom: 0.4pt solid #ddd4c2; vertical-align: top; }
+.ps-table td small { display: block; color: var(--ink2); font-size: 6.8pt; }
+.ps-table tr.blank td { height: 4.6mm; }
+.ps-res { list-style: none; padding: 0; display: grid; gap: .8mm; }
+.ps-res li { display: flex; justify-content: space-between; gap: 2mm; align-items: center; font-size: 8pt; }
+.ps-res small { color: var(--ink2); }
+
+/* Page 2 */
+.ps-two { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.35fr 1fr; gap: 2.4mm; }
+.ps-feats { columns: 2; column-gap: 4mm; }
+.ps-feat-sec { break-inside: avoid-column; }
+.ps-feat-sec .ps-text { break-inside: avoid; }
+.ps-weight { color: var(--ink2); font-size: 7pt; margin-top: 1mm; }
+.ps-coins { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2mm; text-align: center; }
+.ps-coins > div { border: 0.6pt solid #b9ae98; border-radius: 1.4mm; padding: 1mm 0 .6mm; display: flex; flex-direction: column; }
+.ps-coins .ps-num { font-size: 12pt; }
+.ps-coins span { font: 700 6pt var(--font-head); text-transform: uppercase; color: var(--ink2); }
+.ps-pers + .ps-pers { border-top: 0.4pt solid #ddd4c2; }
+.ps-story { columns: 2; column-gap: 5mm; }
+
+/* Page 3 */
+.ps-spellhead { display: grid; grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr 3fr; gap: 1.6mm; }
+.ps-word { font: 700 10pt var(--font-head) !important; text-transform: uppercase; letter-spacing: .04em; }
+.ps-slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6mm 3mm; align-content: start; }
+.ps-slot { display: flex; align-items: center; justify-content: space-between; gap: 1mm; font-size: 7.4pt; }
+.ps-spells tr.lvl td { font: 700 6.6pt var(--font-head); text-transform: uppercase; letter-spacing: .08em; color: var(--red); padding-top: 1.6mm; border-bottom: 0.8pt solid var(--rule); }
+.ps-spells td small { display: inline; font-weight: 700; }
+
+.ps-foot { display: flex; justify-content: space-between; align-items: center; gap: 3mm; font-size: 6.2pt; color: var(--ink2); border-top: 0.5pt solid #cfc6b2; padding-top: 1.2mm; }
+.ps-mark { display: inline-flex; align-items: center; font: 400 8pt var(--font-name); color: var(--ink); }
+
+@media print {
+  html, body, #root { height: auto !important; background: #fff !important; }
+  .no-print { display: none !important; }
+  .print-shell { position: static; overflow: visible; background: #fff; }
+  .print-pages { display: block; padding: 0; }
+  .ps-page { box-shadow: none; zoom: 1 !important; break-after: page; page-break-after: always; margin: 0; }
+  .ps-page:last-child { break-after: auto; page-break-after: auto; }
+}
+/* Print sheet: fill space with writing lines, larger type */
+.ps-page { font-size: 9pt; }
+.ps-frame.grow { display: flex; flex-direction: column; }
+.ps-fill { flex: 1; min-height: 6mm; margin-top: 1.5mm; background: repeating-linear-gradient(transparent 0 5.4mm, #d6cdb9 5.4mm 5.65mm); }
+.ps-skills { flex: 1; }
+.ps-skills td { font-size: 8.8pt; }
+.ps-list { gap: 1.1mm; padding: .6mm 0; }
+.ps-list li { font-size: 9pt; }
+.ps-ability .ps-num { font-size: 24pt; }
+.ps-small .ps-num { font-size: 18pt; }
+.ps-hp-row .ps-num { font-size: 22pt; }
+.ps-text { font-size: 8.6pt; }
+.ps-table td { font-size: 8.6pt; padding: 1mm .8mm; }
+.ps-feats { columns: 2; column-gap: 4mm; }
+.ps-feats > .ps-feat-sec:first-child .ps-sub { margin-top: 0; }
+.ps-skills { flex: none; }
+.ps-skills td { height: 7.4mm; padding: 0 .6mm; }
+.ps-page { zoom: var(--z, 1); }
+@media (max-width: 799px) { .print-bar .pb-title { flex-basis: calc(100% - 110px); } .print-bar .btn.primary { flex: 1; justify-content: center; min-height: 44px; } }
