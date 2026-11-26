@@ -8,6 +8,7 @@ import { CONDITIONS } from '../lib/rules'
 import { initiative } from '../lib/character'
 import { roll } from '../lib/dice'
 import { useCampaignId, useCharacters, useMedia, useOptimistic } from '../lib/hooks'
+import { DraftTextarea, NumberInput } from '../components/DraftInput'
 import { CRS, CR_XP, budgetFor, rate } from '../lib/encounter'
 
 const order = (a: Combatant, b: Combatant) => b.initiative - a.initiative || a.name.localeCompare(b.name)
@@ -143,8 +144,8 @@ function Row({ c: stored, current, selected, onSelect }: { c: Combatant; current
   const down = c.hp <= 0
   return (
     <li className={`ini ${current ? 'cur' : ''} ${selected ? 'sel' : ''} ${down ? 'down' : ''} ${c.isPlayer ? 'pc' : ''}`} aria-current={current ? 'step' : undefined}>
-      <input className="initn tnum" inputMode="numeric" aria-label={`${c.name} initiative`} value={c.initiative}
-        onChange={e => set({ initiative: Number(e.target.value) || 0 })} />
+      <NumberInput className="initn tnum" aria-label={`${c.name} initiative`} value={c.initiative} min={-10} max={99}
+        onNumber={n => set({ initiative: n })} />
       <div className="who">
         <button className="nm row-name" onClick={onSelect}>{c.name}{c.isPlayer && <span className="kind pc-tag">PC</span>}</button>
         <div className="bar-line">
@@ -181,7 +182,7 @@ function Detail({ c: stored }: { c: Combatant; upd: (c: Combatant, p: Partial<Co
   const n = Math.max(0, Number(amt) || 0)
   const num = (label: string, v: number, set: (v: number) => void): ReactNode => (
     <label className="cd-num"><span className="k">{label}</span>
-      <input className="field num-in tnum" inputMode="numeric" value={v} onChange={e => set(Number(e.target.value.replace(/[^\d-]/g, '')) || 0)} /></label>
+      <NumberInput className="field num-in tnum" value={v} onNumber={set} /></label>
   )
   return (
     <div className="cd">
@@ -218,7 +219,7 @@ function Detail({ c: stored }: { c: Combatant; upd: (c: Combatant, p: Partial<Co
       </div>
       {!c.isPlayer && <SaveMonster c={c} />}
       <label className="lab" htmlFor={`cn-${c.id}`}>Notes</label>
-      <textarea id={`cn-${c.id}`} className="field area" rows={4} placeholder="Tactics, resistances, loot…" value={c.notes ?? ''} onChange={e => set({ notes: e.target.value })} />
+      <DraftTextarea key={c.id} id={`cn-${c.id}`} className="field area" rows={4} placeholder="Tactics, resistances, loot…" value={c.notes ?? ''} onValue={v => set({ notes: v })} />
     </div>
   )
 }

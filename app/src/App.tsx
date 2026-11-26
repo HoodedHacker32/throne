@@ -6,6 +6,7 @@ import { db, seedIfEmpty } from './db'
 import { useUI, type Mode } from './state'
 import { DieMark } from './components/DieMark'
 import { RollToast } from './components/RollToast'
+import { OfflineBar, UpdateToast } from './components/AppStatus'
 import { Palette } from './components/Palette'
 import { DiceDock } from './components/DiceDock'
 import { QuickCapture } from './components/QuickCapture'
@@ -105,6 +106,7 @@ function Shell() {
           </button>
         </div>
       </header>
+      <OfflineBar />
       <div className={`body ${railCollapsed ? 'rail-collapsed' : ''}`}>
         <nav className={`rail ${railCollapsed ? 'collapsed' : ''}`} aria-label="Main">
           {links('')}
@@ -144,6 +146,7 @@ function Shell() {
         <nav className="tabbar" aria-label="Main">{links('')}</nav>
       </div>
       <RollToast />
+      <UpdateToast />
       <Palette />
       <DiceDock />
       <QuickCapture />
