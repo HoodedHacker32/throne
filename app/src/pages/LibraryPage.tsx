@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { TablesPanel } from '../components/TablesPanel'
+import { DraftInput } from '../components/DraftInput'
 import { Trash2, Upload, X } from 'lucide-react'
 import { db, type LibraryItem } from '../db'
 import { useCampaignId } from '../lib/hooks'
@@ -76,7 +77,7 @@ export function LibraryPage() {
                 {i.mime.startsWith('image/') ? <img src={urls.get(i.id)} alt="" loading="lazy" /> : <div className="lib-file">PDF</div>}
               </button>
               <figcaption className="cap">
-                <input className="field bare" value={i.name} aria-label="Name" onChange={e => db.library.update(i.id, { name: e.target.value })} />
+                <DraftInput className="field bare" value={i.name} aria-label="Name" onValue={v => db.library.update(i.id, { name: v })} />
                 <span className="kind">{i.kind}</span>
                 <button className="btn ghost sm" aria-label={`Delete ${i.name}`} onClick={() => confirm(`Delete ${i.name}?`) && db.library.delete(i.id)}><Trash2 size={16} /></button>
               </figcaption>

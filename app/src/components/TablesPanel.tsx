@@ -6,6 +6,7 @@ import { dieFor, parseRows, rollTable, STARTER_TABLES, type TableResult } from '
 import { useMedia } from '../lib/hooks'
 import { useUI } from '../state'
 import { ConfirmDelete } from './ConfirmDelete'
+import { DraftInput, DraftTextarea } from './DraftInput'
 
 /** Seed the starter tables once per device. */
 async function seedTables() {
@@ -78,8 +79,7 @@ export function TablesPanel() {
     <div className="table-editor">
       {!wide && <button className="btn ghost sm back" onClick={() => setSel(null)}><ArrowLeft size={14} /> Tables</button>}
       <div className="te-head">
-        <input className="title-input" value={cur.name} aria-label="Table name"
-          onChange={e => db.randomTables.update(cur.id, { name: e.target.value, updatedAt: Date.now() })} />
+        <DraftInput className="title-input" value={cur.name} aria-label="Table name" onValue={v => db.randomTables.update(cur.id, { name: v, updatedAt: Date.now() })} />
         <button className="btn primary" onClick={() => go(cur)} disabled={!dieFor(parseRows(cur.rows))}><Dices size={16} /> Roll d{dieFor(parseRows(cur.rows)) || '–'}</button>
       </div>
       {results.length > 0 && (
@@ -90,9 +90,9 @@ export function TablesPanel() {
         </ol>
       )}
       <label className="lab" htmlFor="te-rows">Entries, one per line</label>
-      <textarea id="te-rows" className="field area mono" rows={12} value={cur.rows}
+      <DraftTextarea id="te-rows" className="field area mono" rows={12} value={cur.rows}
         placeholder={'1-2: Clear skies\n3: Fog\n4-6: Rain\n\nor just one entry per line'}
-        onChange={e => db.randomTables.update(cur.id, { rows: e.target.value, updatedAt: Date.now() })} />
+        onValue={v => db.randomTables.update(cur.id, { rows: v, updatedAt: Date.now() })} />
       <p className="muted small">Ranges like <code>1-3:</code> are optional. <code>{'{2d6}'}</code> rolls dice inside an entry, <code>{'{Table name}'}</code> rolls on another table. Lines starting with # are ignored.</p>
       <div className="foot"><span className="muted small tnum">{parseRows(cur.rows).length} entries</span>
         <button className="btn ghost sm" onClick={() => setDel(cur)}><Trash2 size={14} /> Delete table</button></div>

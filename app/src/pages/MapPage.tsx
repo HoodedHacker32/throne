@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useRef, useState, type PointerEvent as RPointerEvent } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type PointerEvent as RPointerEvent } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { ArrowLeft, Eraser, ExternalLink, Hand, MapPin as PinIcon, Maximize, Minus, Pencil, Plus, Trash2, Undo2 } from 'lucide-react'
 import { db, type LibraryItem, type MapPin, type MapStroke, type Note } from '../db'
 import { Drawer } from '../components/Drawer'
-import { useMedia } from '../lib/hooks'
+import { useMedia, useOptimistic } from '../lib/hooks'
 
 type Tool = 'pan' | 'pin' | 'draw' | 'erase'
 const COLORS = ['#ba0000', '#14100e', '#2f6fb5', '#2f6a3f', '#d4a017']
@@ -22,7 +22,7 @@ export function MapPage() {
 function MapView({ item }: { item: LibraryItem }) {
   const navigate = useNavigate()
   const wide = useMedia('(min-width: 1100px)')
-  const url = useMemo(() => URL.createObjectURL(item.blob), [item.blob])
+  const url = useMemo(() => URL.createObjectURL(item.blob), [item.id]) // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => () => URL.revokeObjectURL(url), [url])
   const notes = useLiveQuery(() => db.notes.where('campaignId').equals(item.campaignId).sortBy('title'), [item.campaignId], [] as Note[])
 
@@ -37,12 +37,14 @@ function MapView({ item }: { item: LibraryItem }) {
   const gesture = useRef<{ x: number; y: number; vx: number; vy: number; dist?: number; s?: number; moved: boolean } | null>(null)
   const history = useRef<{ pins: MapPin[]; strokes: MapStroke[] }[]>([])
 
-  const pins = item.pins ?? [], strokes = item.strokes ?? []
+  // Instant local view of pins, strokes and name while they are written to IndexedDB.
+  const [it, write] = useOptimistic(item, useCallback((p: Partial<LibraryItem>) => db.library.update(item.id, p), [item.id]))
+  const pins = it.pins ?? [], strokes = it.strokes ?? []
   const save = (patch: Partial<Pick<LibraryItem, 'pins' | 'strokes'>>) => {
     history.current.push({ pins, strokes }); if (history.current.length > 50) history.current.shift()
-    return db.library.update(item.id, patch)
+    return write(patch)
   }
-  const undo = () => { const h = history.current.pop(); if (h) db.library.update(item.id, h) }
+  const undo = () => { const h = history.current.pop(); if (h) write(h) }
 
   // Fit the image to the viewport once its size is known.
   const fit = () => {
@@ -143,7 +145,7 @@ function MapView({ item }: { item: LibraryItem }) {
     <div className={`map-page tool-${tool}`}>
       <div className="map-bar">
         <Link to="/dm/library" className="btn ghost sm" aria-label="Back to library"><ArrowLeft size={16} /></Link>
-        <input className="title-input map-title" value={item.name} aria-label="Map name" onChange={e => db.library.update(item.id, { name: e.target.value })} />
+        <input className="title-input map-title" value={it.name} aria-label="Map name" onChange={e => write({ name: e.target.value })} />
         <div className="seg" role="group" aria-label="Tool">
           {([['pan', Hand, 'Move'], ['pin', PinIcon, 'Pin'], ['draw', Pencil, 'Draw'], ['erase', Eraser, 'Erase']] as const).map(([t, Icon, l]) => (
             <button key={t} aria-pressed={tool === t} onClick={() => setTool(t)} title={l}><Icon size={14} /> <span className="hide-s">{l}</span></button>

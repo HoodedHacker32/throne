@@ -4,12 +4,14 @@ import { useEffect, useRef, useState } from 'react'
 export function ConfirmDelete({ what, onConfirm, onCancel }: { what: string; onConfirm: () => void; onCancel: () => void }) {
   const [v, setV] = useState('')
   const input = useRef<HTMLInputElement>(null)
+  const cancel = useRef(onCancel)
+  cancel.current = onCancel
+  useEffect(() => { input.current?.focus() }, [])
   useEffect(() => {
-    input.current?.focus()
-    const k = (e: KeyboardEvent) => e.key === 'Escape' && onCancel()
+    const k = (e: KeyboardEvent) => { if (e.key === 'Escape') cancel.current() }
     window.addEventListener('keydown', k)
     return () => window.removeEventListener('keydown', k)
-  }, [onCancel])
+  }, [])
   const ok = v.trim().toUpperCase() === 'DELETE'
   return (
     <div className="modal-scrim" onMouseDown={onCancel}>

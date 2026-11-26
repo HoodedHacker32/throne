@@ -4,6 +4,7 @@ import { useLiveQuery } from 'dexie-react-hooks'
 import { Download, Map as MapIcon, NotebookPen, Plus, Swords, Upload } from 'lucide-react'
 import { download, exportCampaign, importCampaign } from '../lib/backup'
 import { randomNpc } from '../components/NpcCardEditor'
+import { DraftInput } from '../components/DraftInput'
 import { useTableLookup } from '../components/TablesPanel'
 import { Dices } from 'lucide-react'
 import { db, type NoteKind } from '../db'
@@ -67,7 +68,7 @@ export function CampaignPage() {
         <div>
           <h1 className="visually-hidden">Campaign: {campaign.name}</h1>
           <label className="lab" htmlFor="cname" style={{ marginTop: 0 }}>Campaign</label>
-          <input id="cname" className="title-input campaign-name" value={campaign.name} onChange={e => db.campaigns.update(campaign.id, { name: e.target.value })} />
+          <DraftInput id="cname" className="title-input campaign-name" value={campaign.name} onValue={v => db.campaigns.update(campaign.id, { name: v })} />
         </div>
         <div className="actions-row">
           <button className="btn" onClick={newCampaign}><Plus size={16} /> New campaign</button>
