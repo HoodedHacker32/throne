@@ -1,10 +1,10 @@
 import { useCallback, useMemo, useState } from 'react'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks'
-import { ArrowLeft, Bed, Camera, Coffee, Heart, Pencil, Plus, Search, Shield, Trash2 } from 'lucide-react'
+import { ArrowLeft, Bed, Camera, Coffee, FileDown, Heart, Pencil, Plus, Search, Shield, Trash2 } from 'lucide-react'
 import { db, type ActionKind, type Attack, type Character, type ClassLevel, type Item, type Note, type Spell } from '../db'
 import { ABILITIES, ABILITY_NAMES, ALIGNMENTS, CLASSES, CONDITIONS, SKILLS, SPECIES, fmt, mod, profBonus, type Ability } from '../lib/rules'
-import { abilityMod, classLine, classesOf, hitDiceLeft, initiative, passive, saveBonus, skillBonus, withClasses } from '../lib/character'
+import { parseFeatures, abilityMod, classLine, classesOf, hitDiceLeft, initiative, passive, saveBonus, skillBonus, withClasses } from '../lib/character'
 import { check, record, rollDamage } from '../lib/roller'
 import { roll } from '../lib/dice'
 import { useMedia, useOptimistic } from '../lib/hooks'
@@ -75,6 +75,7 @@ function Sheet({ c: stored }: { c: Character }) {
         <div className="actions">
           <button className="btn" onClick={() => setDetail({ t: 'short' })}><Coffee size={16} /> Short rest</button>
           <button className="btn" onClick={() => setDetail({ t: 'long' })}><Bed size={16} /> Long rest</button>
+          <Link className="btn" to={`/characters/${c.id}/print`} title="Printable sheet / PDF"><FileDown size={16} /> PDF</Link>
           <button className={`btn ${editing ? 'primary' : ''}`} onClick={() => setParams(editing ? {} : { edit: '1' }, { replace: true })}>
             <Pencil size={16} /> {editing ? 'Done' : 'Edit'}
           </button>
@@ -687,24 +688,6 @@ function Inventory({ c, save, open }: { c: Character; save: Save; open: (i: numb
 }
 
 /** Split DDB-style feature text ("=== HEADING ===", "* Feature") into sections. */
-function parseFeatures(text: string) {
-  const sections: { title: string; items: { name: string; body: string }[] }[] = []
-  let cur = { title: 'Features', items: [] as { name: string; body: string }[] }
-  let item: { name: string; body: string } | null = null
-  const flush = () => { if (item) cur.items.push(item); item = null }
-  for (const raw of text.split('\n')) {
-    const line = raw.trim()
-    const h = line.match(/^===\s*(.+?)\s*===$/)
-    if (h) { flush(); if (cur.items.length) sections.push(cur); cur = { title: h[1].toLowerCase().replace(/\b\w/g, x => x.toUpperCase()), items: [] }; continue }
-    const it = line.match(/^\*\s+(.+)$/)
-    if (it) { flush(); item = { name: it[1].replace(/\s*•.*$/, ''), body: '' }; continue }
-    if (!item) { if (line) item = { name: '', body: line }; continue }
-    item.body += (item.body ? '\n' : '') + line
-  }
-  flush(); if (cur.items.length) sections.push(cur)
-  return sections
-}
-
 function Features({ c, save }: { c: Character; save: Save }) {
   const [edit, setEdit] = useState(false)
   const sections = useMemo(() => parseFeatures(c.features), [c.features])

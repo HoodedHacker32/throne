@@ -26,6 +26,7 @@ const DicePage = lazy(() => import('./pages/DicePage').then(m => ({ default: m.D
 const CombatPage = lazy(() => import('./pages/CombatPage').then(m => ({ default: m.CombatPage })))
 const LibraryPage = lazy(() => import('./pages/LibraryPage').then(m => ({ default: m.LibraryPage })))
 const MapPage = lazy(() => import('./pages/MapPage').then(m => ({ default: m.MapPage })))
+const PrintPage = lazy(() => import('./pages/PrintPage').then(m => ({ default: m.PrintPage })))
 const CampaignPage = lazy(() => import('./pages/CampaignPage').then(m => ({ default: m.CampaignPage })))
 
 const NAV: Record<Mode, { to: string; label: string; icon: typeof House; end?: boolean }[]> = {
@@ -156,9 +157,17 @@ function Shell() {
   )
 }
 
+/** The printable sheet is a bare page (no app chrome); everything else lives in the shell. */
+function Root() {
+  const { pathname } = useLocation()
+  if (/^\/characters\/\d+\/print\/?$/.test(pathname))
+    return <Suspense fallback={null}><Routes><Route path="/characters/:id/print" element={<PrintPage />} /></Routes></Suspense>
+  return <Shell />
+}
+
 export default function App() {
   const [ready, setReady] = useState(false)
   useEffect(() => { seedIfEmpty().then(() => setReady(true)) }, [])
   if (!ready) return null
-  return <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '') || undefined}><Shell /></BrowserRouter>
+  return <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '') || undefined}><Root /></BrowserRouter>
 }

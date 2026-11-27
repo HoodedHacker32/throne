@@ -43,3 +43,22 @@ export const colorFor = (s: string) => {
   return `hsl(${h} 38% 36%)`
 }
 export const initials = (s: string) => s.replace(/^Sample:\s*/, '').split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase() || '?'
+
+/** Split the free-text features into sections (=== Heading ===) and items (* Name, then body lines). */
+export function parseFeatures(text: string) {
+  const sections: { title: string; items: { name: string; body: string }[] }[] = []
+  let cur = { title: 'Features', items: [] as { name: string; body: string }[] }
+  let item: { name: string; body: string } | null = null
+  const flush = () => { if (item) cur.items.push(item); item = null }
+  for (const raw of text.split('\n')) {
+    const line = raw.trim()
+    const h = line.match(/^===\s*(.+?)\s*===$/)
+    if (h) { flush(); if (cur.items.length) sections.push(cur); cur = { title: h[1].toLowerCase().replace(/\b\w/g, x => x.toUpperCase()), items: [] }; continue }
+    const it = line.match(/^\*\s+(.+)$/)
+    if (it) { flush(); item = { name: it[1].replace(/\s*•.*$/, ''), body: '' }; continue }
+    if (!item) { if (line) item = { name: '', body: line }; continue }
+    item.body += (item.body ? '\n' : '') + line
+  }
+  flush(); if (cur.items.length) sections.push(cur)
+  return sections
+}
