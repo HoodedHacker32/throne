@@ -2,8 +2,10 @@ import type { Fields } from './ddb'
 
 /** Read every widget annotation's name and value. DDB exports have no AcroForm, so walk the pages. */
 export async function readPdfFields(file: File): Promise<{ fields: Fields; portrait?: string }> {
-  const pdfjs = await import('pdfjs-dist')
-  const worker = await import('pdfjs-dist/build/pdf.worker.min.mjs?url')
+  // The legacy build polyfills new JS features (Map.getOrInsertComputed, Math.sumPrecise) that iOS 18 Safari
+  // lacks. Without them pdf.js silently drops every form field and the import finds nothing.
+  const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs')
+  const worker = await import('pdfjs-dist/legacy/build/pdf.worker.min.mjs?url')
   pdfjs.GlobalWorkerOptions.workerSrc = worker.default
   const doc = await pdfjs.getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise
   const fields: Fields = {}
