@@ -58,9 +58,11 @@ export function ImportPage() {
             <li><b className="tnum">{draft.hpMax}</b> max HP, AC <b className="tnum">{draft.ac}</b>, speed <b className="tnum">{draft.speed}</b> ft.</li>
             <li><b className="tnum">{Object.keys(draft.skillProf).length}</b> skill proficiencies, saves: {draft.saveProf.join(', ').toUpperCase() || 'none'}</li>
             <li><b className="tnum">{draft.attacks.length}</b> attacks, <b className="tnum">{draft.inventory.length}</b> items, <b className="tnum">{draft.coins.gp}</b> gp</li>
+            {(draft.spells?.length || draft.slots?.some(n => n > 0)) ? (
+              <li><b className="tnum">{draft.spells?.length ?? 0}</b> spells{draft.slots?.some(n => n > 0) ? `, slots ${draft.slots.map((n, l) => l > 0 && n ? `${n}×${l}` : '').filter(Boolean).join(' ')}` : ''}{draft.spellAbility ? `, cast with ${draft.spellAbility.toUpperCase()}` : ''}</li>
+            ) : null}
             <li>Features, personality and backstory text copied across</li>
           </ul>
-          <p className="muted small">Spells are not imported yet. Add them as features or limited-use resources on the sheet.</p>
           <div className="foot"><button className="btn ghost" onClick={() => setDraft(null)}>Discard</button><button className="btn primary" onClick={save}>Add to my characters</button></div>
         </section>
       )}
